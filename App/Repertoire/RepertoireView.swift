@@ -157,6 +157,7 @@ struct ItemEditorView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @Environment(AppSettings.self) private var settings
+    @Environment(AppModel.self) private var model
     @Query(filter: #Predicate<Instrument> { !$0.isArchived }, sort: \Instrument.sortIndex)
     private var instruments: [Instrument]
 
@@ -234,12 +235,14 @@ struct ItemEditorView: View {
         target.title = String(title.trimmingCharacters(in: .whitespacesAndNewlines).prefix(300))
         let trimmedComposer = composer.trimmingCharacters(in: .whitespacesAndNewlines)
         target.composer = trimmedComposer.isEmpty ? nil : trimmedComposer
+        let categoryChanged = item != nil && target.category != category
         target.category = category
         target.status = status
         target.instrument = instruments.first { $0.id == instrumentID }
         target.targetTempo = targetTempo
         target.updatedAt = Date()
         try? context.save()
+        if categoryChanged { model.storeDidChangeInBulk() }
         dismiss()
     }
 }

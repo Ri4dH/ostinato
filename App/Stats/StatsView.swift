@@ -64,7 +64,7 @@ struct StatsView: View {
                         .toggleStyle(.button)
                 }
             }
-            .task(id: model.snapshot?.updatedAt) { await load() }
+            .task(id: model.statsStore.revision) { await load() }
             .onChange(of: range) { recompute() }
         }
     }
@@ -108,12 +108,15 @@ struct StatsView: View {
     }
 
     private func load() async {
-        let sessions = (try? context.fetch(FetchDescriptor<PracticeSession>())) ?? []
-        records = sessions.map(SessionRecord.init)
+        records = model.statsStore.records
         recompute()
         let titles = Dictionary(items.map { ($0.id, (title: $0.title, category: $0.category)) }, uniquingKeysWith: { a, _ in a })
-        let week = Calendar.current.dateInterval(of: .weekOfYear, for: Date())
-        let notes = sessions.filter { week?.contains($0.startDate) ?? false }.map(\.notes).filter { !$0.isEmpty }
+        // Notes only for this week: a small, predicate-limited fetch.
+        let week = Calendar.current.dateInterval(of: .weekOfYear, for: Date()) ?? DateInterval()
+        let start = week.start, end = week.end
+        let notes = ((try? context.fetch(FetchDescriptor<PracticeSession>(
+            predicate: #Predicate { $0.startDate >= start && $0.startDate < end }))) ?? [])
+            .map(\.notes).filter { !$0.isEmpty }
         let input = WeeklySummaryInput.make(records: records, itemTitles: titles, notes: notes,
                                             goal: settings.goal, now: Date(), calendar: .current)
         summary = await WeeklySummaryGenerator.summary(for: input)
@@ -146,9 +149,13 @@ struct StatsView: View {
 struct StatTiles: View {
     let data: StatsData
     let goal: GoalSettings
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
-        Grid(horizontalSpacing: 12, verticalSpacing: 12) {
+        // One column at accessibility sizes so numbers never clip.
+        let layout = typeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(spacing: 12)) : AnyLayout(GridLayout(horizontalSpacing: 12, verticalSpacing: 12))
+        layout {
             GridRow {
                 tile("Total", DurationText.short(data.total), DurationText.spoken(data.total))
                 tile("Streak", String(localized: "\(data.streak.current) days"),
@@ -169,7 +176,7 @@ struct StatTiles: View {
     private func tile(_ title: LocalizedStringKey, _ value: String, _ spoken: String, detail: String? = nil) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title).font(.subheadline).foregroundStyle(.secondary)
-            Text(value).font(.title.bold()).monospacedDigit().minimumScaleFactor(0.6).lineLimit(1)
+            Text(value).font(.title.bold()).monospacedDigit().lineLimit(2).fixedSize(horizontal: false, vertical: true)
             if let detail { Text(detail).font(.caption).foregroundStyle(.secondary) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

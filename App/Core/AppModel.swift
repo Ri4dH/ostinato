@@ -1,3 +1,4 @@
+import CoreData
 import Foundation
 import Observation
 import PracticeKit
@@ -18,6 +19,8 @@ final class AppModel {
     let audio = AudioTools()
     let recordingFiles: RecordingFiles
     let analysis: RecordingAnalysisService
+    /// Records behind every statistic, cached for speed.
+    let statsStore: StatsRecordStore
     private(set) var container: ModelContainer
     /// True when the container was built with CloudKit.
     private(set) var isSyncing: Bool
@@ -36,6 +39,8 @@ final class AppModel {
     @ObservationIgnored let reminders = ReminderScheduler()
     @ObservationIgnored lazy var watchSync = PhoneWatchSync(model: self)
     @ObservationIgnored private let snapshotStore: WidgetSnapshotStore
+    @ObservationIgnored private var remoteChangeObserver: NSObjectProtocol?
+    @ObservationIgnored fileprivate var remoteChangeDebounce: Task<Void, Never>?
 
     private init() {
         let settings = AppSettings(defaults: identifiers.sharedDefaults)
@@ -45,6 +50,10 @@ final class AppModel {
         snapshotStore = WidgetSnapshotStore(directory: identifiers.sharedDirectory)
         recordingFiles = RecordingFiles(identifiers: identifiers)
         analysis = RecordingAnalysisService(files: recordingFiles)
+        let isUITesting = ProcessInfo.processInfo.arguments.contains("-uiTesting")
+        statsStore = StatsRecordStore(
+            cacheURL: isUITesting ? nil : identifiers.sharedDirectory.appending(path: "stats-records.plist"),
+            loadInBackground: true)
 
         let wantsSync = settings.syncEnabled && FileManager.default.ubiquityIdentityToken != nil
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
@@ -71,6 +80,10 @@ final class AppModel {
     // MARK: Lifecycle
 
     func didLaunch() {
+        if !statsStore.hasCache || ProcessInfo.processInfo.arguments.contains("-uiTesting") {
+            statsStore.rebuild(from: container)
+        }
+        observeRemoteChanges()
         watchSync.activate()
         liveActivity.adopt(sessionController.active)
         refreshDerivedState()
@@ -100,7 +113,46 @@ final class AppModel {
         try? context.save()
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
         isSyncing = wantsSync
+        statsStore.rebuild(from: container)
         refreshDerivedState()
+    }
+
+    /// iCloud imports change the store behind our back: rebuild the stats cache.
+    private func observeRemoteChanges() {
+        guard remoteChangeObserver == nil else { return }
+        remoteChangeObserver = NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange, object: nil, queue: .main
+        ) { _ in
+            MainActor.assumeIsolated {
+                AppModel.shared.remoteChangeDebounce?.cancel()
+                AppModel.shared.remoteChangeDebounce = Task {
+                    try? await Task.sleep(for: .seconds(2))
+                    guard !Task.isCancelled else { return }
+                    AppModel.shared.statsStore.rebuild(from: AppModel.shared.container)
+                    AppModel.shared.refreshDerivedState()
+                }
+            }
+        }
+    }
+
+    /// Call after saving, editing or deleting a single session.
+    func sessionDidChange(_ session: PracticeSession) {
+        statsStore.upsert(session)
+        refreshDerivedState()
+    }
+
+    func sessionWasDeleted(id: UUID) {
+        statsStore.remove(sessionID: id)
+        refreshDerivedState()
+    }
+
+    /// Call after bulk changes (import, intents, watch deliveries).
+    func storeDidChangeInBulk() {
+        statsStore.rebuild(from: container)
+        Task {
+            await statsStore.waitForRebuild()
+            refreshDerivedState()
+        }
     }
 
     // MARK: Session actions
@@ -126,7 +178,8 @@ final class AppModel {
 
     func save(_ draft: FinishedSession) {
         do {
-            try SessionWriter.insert(draft, into: context)
+            let saved = try SessionWriter.insert(draft, into: context)
+            statsStore.upsert(saved)
             sessionController.markSaved(draft)
             finishDraft = nil
             isShowingActiveSession = false
@@ -168,7 +221,7 @@ final class AppModel {
 
     /// Recomputes the widget snapshot, watch context and reminders.
     func refreshDerivedState() {
-        let records = (try? context.fetch(FetchDescriptor<PracticeSession>()))?.map(SessionRecord.init) ?? []
+        let records = statsStore.records
         let lastInstrument = settings.lastInstrumentID.flatMap { try? SessionWriter.fetchInstrument(id: $0, in: context) }
         let snapshot = WidgetSnapshot.make(records: records, goal: settings.goal,
                                            lastInstrument: lastInstrument.map(InstrumentRef.init))
@@ -222,7 +275,11 @@ final class AppModel {
         container = try! PracticeStore.makeContainer(identifiers: identifiers, syncEnabled: false, inMemory: true)
         isSyncing = false
         if sessionController.active != nil { sessionController.discard() }
-        if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") {
+        if ProcessInfo.processInfo.arguments.contains("-demoData") {
+            settings.hasOnboarded = true
+            DemoData.seed(into: context)
+            settings.lastInstrumentID = (try? context.fetch(FetchDescriptor<Instrument>(sortBy: [SortDescriptor(\.sortIndex)])))?.first?.id
+        } else if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") {
             settings.hasOnboarded = true
             let violin = Instrument(preset: InstrumentPreset.preset(forKey: "violin")!)
             context.insert(violin)
@@ -277,6 +334,6 @@ extension AppModel: PracticeIntentPerforming {
     }
 
     func dataDidChange() {
-        refreshDerivedState()
+        storeDidChangeInBulk()
     }
 }

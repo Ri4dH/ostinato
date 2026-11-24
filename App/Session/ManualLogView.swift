@@ -76,8 +76,7 @@ struct ManualLogView: View {
             start: start, segments: segments, instrumentID: instrumentID, rating: rating, focus: focus,
             notes: notes, tags: tags) else { return }
         do {
-            try SessionWriter.insert(finished, into: context)
-            model.refreshDerivedState()
+            model.sessionDidChange(try SessionWriter.insert(finished, into: context))
             dismiss()
         } catch {
             model.banner = Banner(message: String(localized: "Couldn't save the session. Try again."), isError: true)

@@ -2,7 +2,7 @@ import Foundation
 
 /// A lightweight, Sendable copy of a session for statistics. Built from the
 /// SwiftData models once, then aggregated off the main thread.
-public struct SessionRecord: Sendable, Hashable, Identifiable {
+public struct SessionRecord: Codable, Sendable, Hashable, Identifiable {
     public var id: UUID
     public var startDate: Date
     public var activeDuration: TimeInterval
@@ -28,7 +28,7 @@ public struct SessionRecord: Sendable, Hashable, Identifiable {
     }
 }
 
-public struct SegmentRecord: Sendable, Hashable {
+public struct SegmentRecord: Codable, Sendable, Hashable {
     public var itemID: UUID?
     public var category: ItemCategory?
     public var duration: TimeInterval

@@ -15,6 +15,7 @@ struct PracticeHomeView: View {
     @State private var showingInstrumentPicker = false
     @State private var tool: PracticeTool?
     @State private var startTrigger = 0
+    @ScaledMetric(relativeTo: .caption) private var toolWidth: CGFloat = 96
 
     private var selectedInstrument: Instrument? {
         let id = selectedInstrumentID ?? settings.lastInstrumentID
@@ -94,7 +95,7 @@ struct PracticeHomeView: View {
     private var toolsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Tools").font(.headline)
-            HStack(spacing: 12) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: toolWidth), spacing: 12)], spacing: 12) {
                 ForEach(PracticeTool.allCases) { tool in
                     Button {
                         self.tool = tool
@@ -104,6 +105,7 @@ struct PracticeHomeView: View {
                             .frame(maxWidth: .infinity, minHeight: 72)
                     }
                     .buttonStyle(.glass)
+                    .tint(.primary)
                 }
             }
         }
@@ -145,9 +147,12 @@ struct VerticalToolLabelStyle: LabelStyle {
             configuration.icon.font(.title2)
             configuration.title
                 .font(.caption.weight(.medium))
-                .lineLimit(1)
-                .minimumScaleFactor(0.6)
+                .foregroundStyle(.primary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
         }
+        .padding(.vertical, 6)
     }
 }
 
@@ -189,12 +194,15 @@ struct TodaySummaryCard: View {
     let snapshot: WidgetSnapshot?
     let goal: GoalSettings
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 30)) { context in
             let minutes = snapshot?.todayMinutes(now: context.date, calendar: .current, active: model.sessionController.active) ?? 0
             let progress = goal.dailyMinutes > 0 ? Double(minutes) / Double(goal.dailyMinutes) : 0
-            HStack(spacing: 20) {
+            let layout = typeSize.isAccessibilitySize
+                ? AnyLayout(VStackLayout(alignment: .leading, spacing: 16)) : AnyLayout(HStackLayout(spacing: 20))
+            layout {
                 GoalRing(progress: progress, lineWidth: 12)
                     .frame(width: 84, height: 84)
                     .accessibilityHidden(true)
@@ -204,9 +212,12 @@ struct TodaySummaryCard: View {
                         .font(.title2.bold())
                         .monospacedDigit()
                     if let streak = snapshot?.streak, streak > 0 {
-                        Label("\(streak)-day streak", systemImage: "flame.fill")
-                            .font(.subheadline)
-                            .foregroundStyle(.orange)
+                        Label {
+                            Text("\(streak)-day streak").foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "flame.fill").foregroundStyle(.orange)
+                        }
+                        .font(.subheadline)
                     } else {
                         Text("Start a session to begin a streak.")
                             .font(.subheadline)

@@ -135,7 +135,7 @@ struct DataManagementView: View {
             guard size < 200_000_000 else { throw BackupError.unreadable }
             let document = try BackupService.decode(Data(contentsOf: url))
             let summary = try BackupService.merge(document, into: context)
-            model.refreshDerivedState()
+            model.storeDidChangeInBulk()
             message = String(localized: "Added \(summary.inserted) records, updated \(summary.updated). \(summary.skipped) were already here.")
         } catch {
             message = (error as? LocalizedError)?.errorDescription ?? String(localized: "This file couldn't be imported.")
@@ -155,6 +155,7 @@ struct DataManagementView: View {
         model.recordingFiles.deleteAllFiles()
         settings.resetAll()
         settings.hasOnboarded = false
+        model.statsStore.replaceAll([])
         model.refreshDerivedState()
     }
 }

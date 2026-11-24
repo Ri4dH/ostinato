@@ -111,7 +111,7 @@ struct SessionTimerText: View {
     var segmentOnly = false
 
     var body: some View {
-        TimelineView(.periodic(from: .now, by: 1)) { context in
+        TimelineView(.animation(minimumInterval: 1, paused: session.isPaused)) { context in
             let elapsed = segmentOnly ? session.currentSegmentElapsed(at: context.date) : session.elapsed(at: context.date)
             Text(DurationText.clock(elapsed))
                 .monospacedDigit()

@@ -95,6 +95,7 @@ struct ItemDetailView: View {
             Button("Delete Item", role: .destructive) {
                 context.delete(item)
                 try? context.save()
+                model.storeDidChangeInBulk()
                 dismiss()
             }
             Button("Archive Instead") { item.status = .archived; try? context.save() }

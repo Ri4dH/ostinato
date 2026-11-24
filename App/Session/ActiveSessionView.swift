@@ -76,12 +76,15 @@ struct ActiveSessionView: View {
             }
             Spacer()
             if session.isPaused {
-                Label("Paused", systemImage: "pause.fill")
-                    .font(.subheadline.bold())
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(.orange.opacity(0.2), in: .capsule)
-                    .foregroundStyle(.orange)
+                Label {
+                    Text("Paused").foregroundStyle(.primary)
+                } icon: {
+                    Image(systemName: "pause.fill").foregroundStyle(.orange)
+                }
+                .font(.subheadline.bold())
+                .padding(.horizontal, 10)
+                .padding(.vertical, 4)
+                .background(.orange.opacity(0.18), in: .capsule)
             }
         }
     }
@@ -94,7 +97,7 @@ struct TimerDisplay: View {
     @ScaledMetric(relativeTo: .largeTitle) private var timerSize: CGFloat = 88
 
     var body: some View {
-        TimelineView(.periodic(from: session.timerReferenceDate(at: .now), by: 1)) { context in
+        TimelineView(.animation(minimumInterval: 1, paused: session.isPaused)) { context in
             let total = session.elapsed(at: context.date)
             let segment = session.currentSegmentElapsed(at: context.date)
             let title = session.currentTarget.title ?? String(localized: "General practice")
@@ -188,10 +191,12 @@ struct ItemSwitcher: View {
         Button(action: action) {
             Label(title, systemImage: symbol)
                 .lineLimit(1)
+                .foregroundStyle(isCurrent ? AnyShapeStyle(.white) : AnyShapeStyle(.primary))
                 .frame(minHeight: 52)
                 .padding(.horizontal, 6)
         }
         .buttonStyle(isCurrent ? AnyButtonStyle(.glassProminent) : AnyButtonStyle(.glass))
+        .tint(isCurrent ? nil : Color.primary)
         .accessibilityAddTraits(isCurrent ? .isSelected : [])
     }
 
@@ -227,6 +232,7 @@ struct SessionControls: View {
     @Environment(AppModel.self) private var model
     @State private var pauseTrigger = 0
     @State private var confirmDiscard = false
+    @ScaledMetric(relativeTo: .caption) private var toolWidth: CGFloat = 96
 
     var body: some View {
         VStack(spacing: 14) {
@@ -253,7 +259,7 @@ struct SessionControls: View {
                 .accessibilityIdentifier("finishSession")
             }
 
-            HStack(spacing: 12) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: toolWidth), spacing: 12)], spacing: 12) {
                 toolButton(model.audio.recorder.isRecording ? "Stop" : "Record",
                            symbol: model.audio.recorder.isRecording ? "stop.circle.fill" : "record.circle") {
                     if model.audio.recorder.isRecording { model.audio.recorder.stop() } else { model.startRecording() }
@@ -266,8 +272,9 @@ struct SessionControls: View {
             }
 
             Button("Discard Session", role: .destructive) { confirmDiscard = true }
-                .font(.footnote)
-                .padding(.top, 8)
+                .font(.subheadline)
+                .frame(minWidth: 44, minHeight: 44)
+                .contentShape(.rect)
         }
         .sensoryFeedback(.impact, trigger: pauseTrigger)
         .confirmationDialog("Discard this session?", isPresented: $confirmDiscard, titleVisibility: .visible) {
@@ -292,6 +299,7 @@ struct SessionControls: View {
                 .frame(maxWidth: .infinity, minHeight: 60)
         }
         .buttonStyle(.glass)
+        .tint(.primary)
     }
 }
 

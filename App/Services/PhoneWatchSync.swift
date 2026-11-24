@@ -77,7 +77,7 @@ final class PhoneWatchSync: NSObject {
             break
         case .reply(let reply):
             if let payload = try? reply.encoded() { session?.transferUserInfo(payload) }
-            model.refreshDerivedState()
+            model.storeDidChangeInBulk()
         case .conflict(let winner, let loser):
             model.conflict = SessionConflict(winner: winner, loser: loser)
         }

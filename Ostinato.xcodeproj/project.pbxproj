@@ -69,7 +69,9 @@
 		C4F468B10B5B793AD59F9C60 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92724475520608AD132B1 /* WatchConnector.swift */; };
 		C85DBA844F7D167469482AE3 /* OstinatoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7567C0277C4C932A293215 /* OstinatoUITests.swift */; };
 		CE75BC1CCF86468FDC13195F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B15AEBF1DCB50402872745B /* SwiftUI.framework */; };
+		D246598B68D8F8934A92991F /* AccessibilityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59683FAC2F890761D431120D /* AccessibilityAuditTests.swift */; };
 		D25B66AAEDB0804962D42ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C131BD1C62FDB1018E957F /* Assets.xcassets */; };
+		DA73442155427AB104834D3C /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7D1E78BB3F2B90489762DE /* DemoData.swift */; };
 		E0E563CB4BF10D871AD2747C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC85CDDC2DA9CFB3E96C22 /* PrivacyInfo.xcprivacy */; };
 		E19C32B96548C69C6703B449 /* OstinatoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */; };
 		E487AC9E6F720DFAD2385E18 /* StatsCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCC79E8A86B90C009A693C /* StatsCharts.swift */; };
@@ -168,6 +170,7 @@
 		31970C96DBD0B4E226E3BD9B /* DroneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneView.swift; sourceTree = "<group>"; };
 		37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OstinatoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B6BFA5B6F0C002BC3BEBEC /* TunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
+		3A7D1E78BB3F2B90489762DE /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentRuntime.swift; sourceTree = "<group>"; };
 		41BC2C2ABE14489691936272 /* OstinatoWatchWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoWatchWidgets.swift; sourceTree = "<group>"; };
 		466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIntents.swift; sourceTree = "<group>"; };
@@ -179,6 +182,7 @@
 		524327086F55A6BC6E383C1A /* WeeklyReportRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReportRenderer.swift; sourceTree = "<group>"; };
 		56D92724475520608AD132B1 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 		58127439CAB9272C8EEC8A36 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		59683FAC2F890761D431120D /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
 		59C131BD1C62FDB1018E957F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59FF1D7FD9E21DDEE7500627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		622D33D43DF7765A5E7C23F8 /* WatchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViews.swift; sourceTree = "<group>"; };
@@ -416,6 +420,7 @@
 				C832776BC7C65DAF5C98CFDB /* AppModel.swift */,
 				CBC57CA7661DA2AAF753BFAD /* AppSettings.swift */,
 				136A3D6331898C84E4824DF7 /* AudioTools.swift */,
+				3A7D1E78BB3F2B90489762DE /* DemoData.swift */,
 				1C061B4F103356B79F368434 /* RootView.swift */,
 			);
 			path = Core;
@@ -521,6 +526,7 @@
 		D7ED924C5B6061788170E64C /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				59683FAC2F890761D431120D /* AccessibilityAuditTests.swift */,
 				0C7567C0277C4C932A293215 /* OstinatoUITests.swift */,
 			);
 			path = UITests;
@@ -780,6 +786,7 @@
 				648472C75C23AE2EBADBADBD /* AudioTools.swift in Sources */,
 				88F3F88AC520B03E5E198DCD /* Components.swift in Sources */,
 				671F10566B04DBD4258786CD /* DataManagementView.swift in Sources */,
+				DA73442155427AB104834D3C /* DemoData.swift in Sources */,
 				8266FA864917C73D4778B1CA /* DroneView.swift in Sources */,
 				1C6A3604640F35EAF0D01607 /* FinishSessionView.swift in Sources */,
 				87973CD56792840A379AE677 /* HistoryView.swift in Sources */,
@@ -818,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D246598B68D8F8934A92991F /* AccessibilityAuditTests.swift in Sources */,
 				C85DBA844F7D167469482AE3 /* OstinatoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

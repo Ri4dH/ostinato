@@ -64,15 +64,17 @@ struct SessionDetailView: View {
         .navigationTitle(Text(session.startDate, format: .dateTime.month().day().hour().minute()))
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
+            guard !session.isDeleted else { return }
             session.tags = SessionWriter.normalizedTags(session.tags)
             try? context.save()
-            model.refreshDerivedState()
+            model.sessionDidChange(session)
         }
         .confirmationDialog("Delete this session?", isPresented: $confirmingDelete, titleVisibility: .visible) {
             Button("Delete Session", role: .destructive) {
+                let id = session.id
                 context.delete(session)
                 try? context.save()
-                model.refreshDerivedState()
+                model.sessionWasDeleted(id: id)
                 dismiss()
             }
             Button("Cancel", role: .cancel) {}
