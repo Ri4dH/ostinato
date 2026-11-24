@@ -20,7 +20,8 @@ struct RecordingsSection: View {
                     .foregroundStyle(.secondary)
             }
             ForEach(recordings) { recording in
-                RecordingRow(recording: recording, availability: model.recordingFiles.availability(of: recording)) {
+                RecordingRow(recording: recording, availability: model.recordingFiles.availability(of: recording),
+                             analysis: model.analysis.analysis(for: recording)) {
                     playing = recording
                 }
                 .swipeActions {
@@ -64,6 +65,7 @@ struct RecordingsSection: View {
 struct RecordingRow: View {
     let recording: Recording
     let availability: RecordingFiles.Availability
+    var analysis: RecordingAnalysis?
     let play: () -> Void
 
     var body: some View {
@@ -79,6 +81,9 @@ struct RecordingRow: View {
                     Text("\(recording.createdAt, format: .dateTime.month().day().hour().minute()) · \(DurationText.clock(recording.duration))")
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                    if let analysis {
+                        Text(analysis.summary).font(.caption).foregroundStyle(.secondary)
+                    }
                     if availability == .onAnotherDevice {
                         Text("Stored on another device").font(.caption).foregroundStyle(.secondary)
                     } else if availability == .downloading {
@@ -162,6 +167,8 @@ struct RecordingPlayerSheet: View {
                         Text("1×").tag(Float(1))
                     }
                     .pickerStyle(.segmented)
+
+                    AnalysisPanel(recording: recording)
                 }
             }
             .padding()
@@ -185,5 +192,51 @@ struct RecordingPlayerSheet: View {
             .onDisappear { player.stop() }
         }
         .presentationDetents([.medium])
+    }
+}
+
+/// Tempo, key and stability from on-device analysis, with "Save BPM to item".
+struct AnalysisPanel: View {
+    let recording: Recording
+    @Environment(AppModel.self) private var model
+    @Environment(\.modelContext) private var context
+    @State private var savedBPM: Int?
+
+    var body: some View {
+        let service = model.analysis
+        VStack(alignment: .leading, spacing: 10) {
+            if let analysis = service.analysis(for: recording) {
+                Text(analysis.summary).font(.headline)
+                Text("Loudness \(analysis.loudness, format: .number.precision(.fractionLength(0))) dB, peak \(analysis.peak, format: .number.precision(.fractionLength(0))) dB")
+                    .font(.caption).foregroundStyle(.secondary)
+                if let bpm = analysis.roundedBPM, let item = recording.item {
+                    if savedBPM == bpm {
+                        Label("Saved to \(item.title)", systemImage: "checkmark.circle.fill")
+                            .font(.subheadline).foregroundStyle(.secondary)
+                    } else {
+                        Button("Save \(bpm) BPM to \(item.title)", systemImage: "metronome") {
+                            savedBPM = service.saveTempo(of: recording, in: context)
+                        }
+                        .buttonStyle(.glass)
+                    }
+                }
+                Text("Analyzed on this device. Estimates can be off for rubato or very quiet playing.")
+                    .font(.caption2).foregroundStyle(.tertiary)
+            } else if service.isAnalyzing(recording) {
+                HStack {
+                    ProgressView()
+                    Text("Analyzing tempo and key…")
+                    Spacer()
+                    Button("Cancel") { service.cancel(recording) }
+                }
+            } else {
+                Button("Analyze Tempo and Key", systemImage: "waveform.badge.magnifyingglass") {
+                    service.analyze(recording, in: context)
+                }
+                .buttonStyle(.glass)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .sensoryFeedback(.success, trigger: savedBPM)
     }
 }

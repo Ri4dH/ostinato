@@ -17,6 +17,7 @@ final class AppModel {
     let sessionController: SessionController
     let audio = AudioTools()
     let recordingFiles: RecordingFiles
+    let analysis: RecordingAnalysisService
     private(set) var container: ModelContainer
     /// True when the container was built with CloudKit.
     private(set) var isSyncing: Bool
@@ -43,6 +44,7 @@ final class AppModel {
         sessionController = SessionController(store: store)
         snapshotStore = WidgetSnapshotStore(directory: identifiers.sharedDirectory)
         recordingFiles = RecordingFiles(identifiers: identifiers)
+        analysis = RecordingAnalysisService(files: recordingFiles)
 
         let wantsSync = settings.syncEnabled && FileManager.default.ubiquityIdentityToken != nil
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
@@ -205,6 +207,7 @@ final class AppModel {
         }
         context.insert(recording)
         try? context.save()
+        analysis.analyze(recording, in: context)
         if isSyncing, settings.syncRecordings {
             Task { await recordingFiles.applySync(enabled: true, in: context) }
         }

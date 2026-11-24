@@ -30,6 +30,7 @@
 		3B554B44D9097CA21915BB53 /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 244545B2F9C9DD1A95AAA898 /* PracticeKit */; };
 		3ED1D59B9D373CFE5E09B956 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AB16B20BBFFCFE5FBE565FC1 /* PrivacyInfo.xcprivacy */; };
 		3FB70C54DE6084A4DAF04916 /* PhoneWatchSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */; };
+		436E9E7EACB1DF4CE024F5FF /* RecordingAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C459B8AA9F6F0B310183767 /* RecordingAnalysisService.swift */; };
 		49038E48B1862A22F30FE754 /* IntentRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */; };
 		5351E27398A4A009DDE74625 /* PracticeEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088E6EA2AD11A7B9850ED3 /* PracticeEntities.swift */; };
 		586D4B178C66322FC1FE03D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40EA638E76B5927A91411FE /* Assets.xcassets */; };
@@ -191,6 +192,7 @@
 		8604A3A8FFC6C1BAA50E9016 /* OstinatoWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OstinatoWidgets.entitlements; sourceTree = "<group>"; };
 		88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OstinatoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B15AEBF1DCB50402872745B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8C459B8AA9F6F0B310183767 /* RecordingAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingAnalysisService.swift; sourceTree = "<group>"; };
 		94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoWidgetBundle.swift; sourceTree = "<group>"; };
 		97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneWatchSync.swift; sourceTree = "<group>"; };
 		9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoShortcuts.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				485B5CD0A27D1F8C6290FEF3 /* LiveActivityManager.swift */,
 				97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */,
+				8C459B8AA9F6F0B310183767 /* RecordingAnalysisService.swift */,
 				E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */,
 				1E7F3A3404916F8843922CB8 /* ReminderScheduler.swift */,
 				67E3E14E3251F5EDF9EA338D /* SyncStatusMonitor.swift */,
@@ -794,6 +797,7 @@
 				70691E8EA97AB0D326BAE3D0 /* PracticeActivityAttributes.swift in Sources */,
 				5351E27398A4A009DDE74625 /* PracticeEntities.swift in Sources */,
 				B2D74C331823B6F3F8C6DB3E /* PracticeHomeView.swift in Sources */,
+				436E9E7EACB1DF4CE024F5FF /* RecordingAnalysisService.swift in Sources */,
 				2468C103AAE1AE9282177392 /* RecordingFiles.swift in Sources */,
 				5C661B761C2AC79F015F90A5 /* RecordingsSection.swift in Sources */,
 				AA34F9A299A27EC388CF4C0A /* ReminderScheduler.swift in Sources */,
