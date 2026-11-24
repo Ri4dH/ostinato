@@ -24,6 +24,7 @@ final class AppSettings {
     var drone: DroneSettings { didSet { save(drone, Key.drone) } }
     /// Auto-delete recordings older than this many days; 0 = never.
     var recordingRetentionDays: Int { didSet { defaults.set(recordingRetentionDays, forKey: Key.retention) } }
+    var customTunings: [CustomTuning] { didSet { save(customTunings, Key.tunings) } }
 
     init(defaults: UserDefaults) {
         self.defaults = defaults
@@ -44,6 +45,7 @@ final class AppSettings {
         metronome = Self.load(MetronomeSettings.self, Key.metronome, defaults) ?? MetronomeSettings()
         drone = Self.load(DroneSettings.self, Key.drone, defaults) ?? DroneSettings()
         recordingRetentionDays = defaults.integer(forKey: Key.retention)
+        customTunings = Self.load([CustomTuning].self, Key.tunings, defaults) ?? []
     }
 
     var reminderDateComponents: DateComponents {
@@ -76,7 +78,8 @@ final class AppSettings {
         static let metronome = "metronome"
         static let drone = "drone"
         static let retention = "recordingRetentionDays"
+        static let tunings = "customTunings"
         static let all = [onboarded, sync, syncRecordings, awake, a4, concert, reminder, reminderTime,
-                          lastInstrument, goal, metronome, drone, retention]
+                          lastInstrument, goal, metronome, drone, retention, tunings]
     }
 }

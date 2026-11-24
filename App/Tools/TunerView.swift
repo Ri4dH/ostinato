@@ -12,12 +12,24 @@ struct TunerView: View {
     private var instruments: [Instrument]
     @State private var instrumentID: UUID?
     @State private var stringMode = false
+    @State private var tuningID: String?
+    @State private var editingTunings = false
 
     private var tuner: TunerEngine { model.audio.tuner }
 
     private var instrument: Instrument? {
         let id = instrumentID ?? model.sessionController.active?.instrument?.id ?? settings.lastInstrumentID
         return instruments.first { $0.id == id } ?? instruments.first
+    }
+
+    /// Built-in tunings for this instrument plus the user's own.
+    private var tunings: [StringTuning] {
+        StringTuning.tunings(forPreset: instrument?.presetKey)
+            + settings.customTunings.filter { $0.presetKey == nil || $0.presetKey == instrument?.presetKey }.map(\.asStringTuning)
+    }
+
+    private var selectedTuning: StringTuning? {
+        tunings.first { $0.id == tuningID } ?? tunings.first
     }
 
     var body: some View {
@@ -32,7 +44,7 @@ struct TunerView: View {
             } else {
                 NoteDisplay(reading: tuner.reading, written: !settings.showConcertPitch && (instrument?.transposition ?? 0) != 0)
                 CentsNeedle(cents: tuner.reading?.cents)
-                if stringMode, let tuning = StringTuning.tunings(forPreset: instrument?.presetKey).first {
+                if stringMode, let tuning = selectedTuning {
                     StringTargets(tuning: tuning, reading: tuner.reading, transposition: instrument?.transposition ?? 0,
                                   written: !settings.showConcertPitch)
                 }
@@ -47,8 +59,14 @@ struct TunerView: View {
                 if (instrument?.transposition ?? 0) != 0 {
                     Toggle("Show concert pitch", isOn: $settings.showConcertPitch)
                 }
-                if !StringTuning.tunings(forPreset: instrument?.presetKey).isEmpty {
+                if instrument?.hasPitch ?? true {
                     Toggle("String by string", isOn: $stringMode)
+                    if stringMode {
+                        Picker("Tuning", selection: Binding(get: { selectedTuning?.id }, set: { tuningID = $0 })) {
+                            ForEach(tunings) { Text($0.name).tag(Optional($0.id)) }
+                        }
+                        Button("Edit Tunings…") { editingTunings = true }
+                    }
                 }
                 Stepper(value: $settings.a4Reference, in: NoteMath.a4Range, step: 1) {
                     Text("A4 = \(Int(settings.a4Reference)) Hz").monospacedDigit()
@@ -58,6 +76,7 @@ struct TunerView: View {
             .frame(maxHeight: 260)
         }
         .padding(.top)
+        .sheet(isPresented: $editingTunings) { TuningEditor(presetKey: instrument?.presetKey) }
         .navigationTitle("Tuner")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
@@ -153,6 +172,64 @@ private struct StringTargets: View {
                     .background(nearest == midi ? AnyShapeStyle(.tint.opacity(0.25)) : AnyShapeStyle(.fill.quaternary), in: .circle)
                     .accessibilityAddTraits(nearest == midi ? .isSelected : [])
             }
+        }
+    }
+}
+
+/// Add and remove custom tunings (e.g. DADGAD, open D, scordatura).
+struct TuningEditor: View {
+    let presetKey: String?
+    @Environment(AppSettings.self) private var settings
+    @Environment(\.dismiss) private var dismiss
+    @State private var name = ""
+    @State private var notes = ""
+
+    private var parsed: [Int]? { CustomTuning.parseNotes(notes) }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Name (e.g. DADGAD)", text: $name)
+                    TextField("Notes, lowest first (e.g. D2 A2 D3 G3 A3 D4)", text: $notes)
+                        .textInputAutocapitalization(.characters)
+                        .autocorrectionDisabled()
+                    Button("Add Tuning", systemImage: "plus") {
+                        guard let strings = parsed else { return }
+                        let title = name.trimmingCharacters(in: .whitespaces)
+                        settings.customTunings.append(CustomTuning(
+                            name: title.isEmpty ? notes : String(title.prefix(40)), strings: strings, presetKey: presetKey))
+                        name = ""
+                        notes = ""
+                    }
+                    .disabled(parsed == nil)
+                } header: {
+                    Text("New tuning")
+                } footer: {
+                    Text(notes.isEmpty || parsed != nil
+                         ? "Use note names with octave numbers. Middle C is C4. Write the notes at concert pitch."
+                         : "Couldn't read those notes. Try something like D2 A2 D3 G3 A3 D4.")
+                }
+
+                let mine = settings.customTunings.filter { $0.presetKey == nil || $0.presetKey == presetKey }
+                if !mine.isEmpty {
+                    Section("Your tunings") {
+                        ForEach(mine) { tuning in
+                            VStack(alignment: .leading) {
+                                Text(tuning.name)
+                                Text(tuning.notesText).font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
+                        .onDelete { offsets in
+                            let ids = offsets.map { mine[$0].id }
+                            settings.customTunings.removeAll { ids.contains($0.id) }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Tunings")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
         }
     }
 }

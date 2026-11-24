@@ -62,6 +62,12 @@ public struct StringTuning: Sendable, Identifiable, Hashable {
     /// Concert-pitch MIDI notes, lowest string first.
     public let strings: [Int]
 
+    public init(id: String, name: String, strings: [Int]) {
+        self.id = id
+        self.name = name
+        self.strings = strings
+    }
+
     public static func tunings(forPreset key: String?) -> [StringTuning] {
         switch key {
         case "violin": [StringTuning(id: "violin", name: "G D A E", strings: [55, 62, 69, 76])]
@@ -81,5 +87,55 @@ public struct StringTuning: Sendable, Identifiable, Hashable {
     /// The string closest to a reading.
     public func nearestString(to midi: Double) -> Int? {
         strings.min { abs(Double($0) - midi) < abs(Double($1) - midi) }
+    }
+}
+
+/// A tuning the user defined (e.g. DADGAD), saved per instrument preset.
+public struct CustomTuning: Codable, Sendable, Identifiable, Hashable {
+    public var id: UUID
+    public var name: String
+    /// Concert-pitch MIDI notes, lowest string first.
+    public var strings: [Int]
+    /// Preset the tuning belongs to (nil = all instruments).
+    public var presetKey: String?
+
+    public init(id: UUID = UUID(), name: String, strings: [Int], presetKey: String?) {
+        self.id = id
+        self.name = name
+        self.strings = strings
+        self.presetKey = presetKey
+    }
+
+    public var asStringTuning: StringTuning {
+        StringTuning(id: id.uuidString, name: name, strings: strings)
+    }
+
+    /// "D2 A2 D3 G3 A3 D4" for display and editing.
+    public var notesText: String {
+        strings.map { "\(NoteMath.name(midi: $0))\(NoteMath.octave(midi: $0))" }.joined(separator: " ")
+    }
+
+    /// Parses notes like "D2 A2 D3 G3 A3 D4", "C#4", "Bb3" or "E♭2".
+    /// Returns nil unless there are 1–12 valid notes between C0 and C8.
+    public static func parseNotes(_ text: String) -> [Int]? {
+        let tokens = text.split(whereSeparator: { $0 == " " || $0 == "," || $0 == "\n" }).map(String.init)
+        guard (1...12).contains(tokens.count) else { return nil }
+        let letters: [Character: Int] = ["C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11]
+        var notes: [Int] = []
+        for token in tokens {
+            var chars = Array(token)
+            guard let first = chars.first, let base = letters[Character(first.uppercased())] else { return nil }
+            chars.removeFirst()
+            var offset = 0
+            if let accidental = chars.first, "#♯b♭".contains(accidental) {
+                offset = "#♯".contains(accidental) ? 1 : -1
+                chars.removeFirst()
+            }
+            guard let octave = Int(String(chars)), (0...8).contains(octave) else { return nil }
+            let midi = (octave + 1) * 12 + base + offset
+            guard (12...108).contains(midi) else { return nil }
+            notes.append(midi)
+        }
+        return notes
     }
 }

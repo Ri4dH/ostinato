@@ -145,3 +145,24 @@ struct DroneTests {
         #expect(synth.isSilent)
     }
 }
+
+@Suite("Custom tunings")
+struct CustomTuningTests {
+    @Test func parsesNoteNames() {
+        #expect(CustomTuning.parseNotes("D2 A2 D3 G3 A3 D4") == [38, 45, 50, 55, 57, 62])
+        #expect(CustomTuning.parseNotes("c#4, Bb3 E♭2") == [61, 58, 39])
+        #expect(CustomTuning.parseNotes("A4") == [69])
+    }
+
+    @Test func rejectsBadInput() {
+        for bad in ["", "H2", "D", "D9", "D2 X3", String(repeating: "E2 ", count: 13)] {
+            #expect(CustomTuning.parseNotes(bad) == nil, "\(bad)")
+        }
+    }
+
+    @Test func roundTripsThroughText() {
+        let tuning = CustomTuning(name: "DADGAD", strings: [38, 45, 50, 55, 57, 62], presetKey: "acousticGuitar")
+        #expect(CustomTuning.parseNotes(tuning.notesText) == tuning.strings)
+        #expect(tuning.asStringTuning.nearestString(to: 55.2) == 55)
+    }
+}
