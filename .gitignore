@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+*.xcresult
+*.xctestproducts
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/PracticeKit/.build/
+Packages/PracticeKit/.swiftpm/
+
+# Local tool settings
+.claude/settings.local.json
+.mobilebuildmcp/

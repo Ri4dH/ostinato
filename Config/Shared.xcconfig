@@ -1,0 +1,19 @@
+// Ostinato build configuration. The bundle prefix is defined ONLY here.
+// Replace `com.example` with your reverse-DNS developer prefix
+// (e.g. com.yourname) and set DEVELOPMENT_TEAM to sign for devices.
+
+OSTINATO_BUNDLE_PREFIX = com.example
+OSTINATO_BUNDLE_ID = $(OSTINATO_BUNDLE_PREFIX).ostinato
+OSTINATO_APP_GROUP = group.$(OSTINATO_BUNDLE_ID)
+OSTINATO_ICLOUD_CONTAINER = iCloud.$(OSTINATO_BUNDLE_ID)
+OSTINATO_DISPLAY_NAME = Ostinato
+
+DEVELOPMENT_TEAM =
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+
+SWIFT_VERSION = 6.0
+SWIFT_STRICT_CONCURRENCY = complete
+SWIFT_EMIT_LOC_STRINGS = YES
+LOCALIZATION_PREFERS_STRING_CATALOGS = YES
+ENABLE_USER_SCRIPT_SANDBOXING = YES

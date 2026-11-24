@@ -1,0 +1,190 @@
+name: Ostinato
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "26.0"
+    watchOS: "26.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  groupSortPosition: top
+configFiles:
+  Debug: Config/Shared.xcconfig
+  Release: Config/Shared.xcconfig
+settings:
+  base:
+    CODE_SIGN_STYLE: Automatic
+packages:
+  PracticeKit:
+    path: Packages/PracticeKit
+
+targets:
+  Ostinato:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Shared
+    dependencies:
+      - package: PracticeKit
+      - target: OstinatoWidgets
+      - target: OstinatoWatch
+    entitlements:
+      path: App/Ostinato.entitlements
+      properties:
+        com.apple.security.application-groups: ["$(OSTINATO_APP_GROUP)"]
+        com.apple.developer.icloud-container-identifiers: ["$(OSTINATO_ICLOUD_CONTAINER)"]
+        com.apple.developer.ubiquity-container-identifiers: ["$(OSTINATO_ICLOUD_CONTAINER)"]
+        com.apple.developer.icloud-services: [CloudKit, CloudDocuments]
+        aps-environment: development
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: $(OSTINATO_DISPLAY_NAME)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        OstinatoAppGroup: $(OSTINATO_APP_GROUP)
+        OstinatoCloudKitContainer: $(OSTINATO_ICLOUD_CONTAINER)
+        ITSAppUsesNonExemptEncryption: false
+        LSApplicationCategoryType: public.app-category.music
+        NSMicrophoneUsageDescription: "Used to record your practice and, if you choose, analyze tempo. Recordings never leave your devices except through your own iCloud."
+        NSSupportsLiveActivities: true
+        CFBundleURLTypes:
+          - CFBundleURLName: $(OSTINATO_BUNDLE_ID)
+            CFBundleURLSchemes: [ostinato]
+        UIBackgroundModes: [audio, remote-notification]
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSUbiquitousContainers:
+          $(OSTINATO_ICLOUD_CONTAINER):
+            NSUbiquitousContainerIsDocumentScopePublic: false
+            NSUbiquitousContainerName: Ostinato
+            NSUbiquitousContainerSupportedFolderLevels: None
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID)
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+
+  OstinatoWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widgets
+      - path: Shared
+    dependencies:
+      - package: PracticeKit
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: Widgets/OstinatoWidgets.entitlements
+      properties:
+        com.apple.security.application-groups: ["$(OSTINATO_APP_GROUP)"]
+    info:
+      path: Widgets/Info.plist
+      properties:
+        CFBundleDisplayName: $(OSTINATO_DISPLAY_NAME)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        OstinatoAppGroup: $(OSTINATO_APP_GROUP)
+        OstinatoCloudKitContainer: $(OSTINATO_ICLOUD_CONTAINER)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID).widgets
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SKIP_INSTALL: YES
+
+  OstinatoWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: WatchApp
+    dependencies:
+      - package: PracticeKit
+      - target: OstinatoWatchWidgets
+    entitlements:
+      path: WatchApp/OstinatoWatch.entitlements
+      properties:
+        com.apple.security.application-groups: ["$(OSTINATO_APP_GROUP)"]
+    info:
+      path: WatchApp/Info.plist
+      properties:
+        CFBundleDisplayName: $(OSTINATO_DISPLAY_NAME)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        OstinatoAppGroup: $(OSTINATO_APP_GROUP)
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: $(OSTINATO_BUNDLE_ID)
+        WKRunsIndependentlyOfCompanionApp: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID).watchkitapp
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: YES
+
+  OstinatoWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: WatchWidgets
+    dependencies:
+      - package: PracticeKit
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: WatchWidgets/OstinatoWatchWidgets.entitlements
+      properties:
+        com.apple.security.application-groups: ["$(OSTINATO_APP_GROUP)"]
+    info:
+      path: WatchWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: $(OSTINATO_DISPLAY_NAME)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        OstinatoAppGroup: $(OSTINATO_APP_GROUP)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID).watchkitapp.widgets
+        TARGETED_DEVICE_FAMILY: "4"
+        SKIP_INSTALL: YES
+
+  OstinatoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    dependencies:
+      - target: Ostinato
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID).uitests
+        TEST_TARGET_NAME: Ostinato
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Ostinato:
+    build:
+      targets:
+        Ostinato: all
+    test:
+      gatherCoverageData: false
+      targets:
+        - OstinatoUITests
+        - package: PracticeKit/PracticeKitTests
+    run:
+      config: Debug
+  OstinatoWatch:
+    build:
+      targets:
+        OstinatoWatch: all

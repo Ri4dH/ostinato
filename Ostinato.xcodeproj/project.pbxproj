@@ -1,0 +1,1258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05652AA2B7D72D30AA3B59E5 /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 14992B7AC00D0CD9AEBD59CC /* PracticeKit */; };
+		06E0E4EA0C61D0CDE594C1D9 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58127439CAB9272C8EEC8A36 /* OnboardingView.swift */; };
+		06E41DB4826DA6F8D73EA3EE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E052A7D90B07E27E04CAEA24 /* PrivacyInfo.xcprivacy */; };
+		08A42A5727E4FECC2EC2D1AA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295C01B3E78F34DAF57A5283 /* WidgetKit.framework */; };
+		09A390BF7C3248DB8CD615C3 /* OstinatoWatchWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC2C2ABE14489691936272 /* OstinatoWatchWidgets.swift */; };
+		10B0FBE46FF6863C1F748870 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF132599FEF0A46270436E3 /* SessionDetailView.swift */; };
+		172A6DD0716D45675BFC6E3D /* SessionIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB840194D6C85A72D856749 /* SessionIntents.swift */; };
+		1C6A3604640F35EAF0D01607 /* FinishSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D467BF1198CD1FAE688E83 /* FinishSessionView.swift */; };
+		1C7B03AA449EE5699D17D784 /* PracticeLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EA486AE5BA832DC435394 /* PracticeLiveActivity.swift */; };
+		1D153B8629C582FEAC13E257 /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B6BFA5B6F0C002BC3BEBEC /* TunerView.swift */; };
+		1E8E2F3966D38EF96471A02F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = D3C4EB1A93D04BC25C6ED5F9 /* PrivacyInfo.xcprivacy */; };
+		1EA45106483E9522E6FE7412 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDE23D57ABD464D6B5EC97 /* SettingsView.swift */; };
+		2468C103AAE1AE9282177392 /* RecordingFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */; };
+		25B7B1C78F513A8C89E9EECD /* SyncStatusMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3E14E3251F5EDF9EA338D /* SyncStatusMonitor.swift */; };
+		2B1BC3EC34C528F13422EDD2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ACFFD7AC30CC10FFEDA00A /* ItemDetailView.swift */; };
+		2E7CDDBDF03BA5821729D2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E2DEAB4001DFC4F1B192F6 /* Assets.xcassets */; };
+		2F8A0B54B25604450ED3D24A /* LogIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */; };
+		313D65B3C4F1926CD72D56DA /* PracticeEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088E6EA2AD11A7B9850ED3 /* PracticeEntities.swift */; };
+		3501B9121049076C089511CE /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 105E1EC1E11AA45D90D1E50A /* PracticeKit */; };
+		364DAF08FABDE0D43F0F64DB /* MetronomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2D5D3F1854E61FCED876C3 /* MetronomeView.swift */; };
+		3B554B44D9097CA21915BB53 /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 244545B2F9C9DD1A95AAA898 /* PracticeKit */; };
+		3ED1D59B9D373CFE5E09B956 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AB16B20BBFFCFE5FBE565FC1 /* PrivacyInfo.xcprivacy */; };
+		3FB70C54DE6084A4DAF04916 /* PhoneWatchSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */; };
+		49038E48B1862A22F30FE754 /* IntentRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */; };
+		5351E27398A4A009DDE74625 /* PracticeEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088E6EA2AD11A7B9850ED3 /* PracticeEntities.swift */; };
+		586D4B178C66322FC1FE03D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40EA638E76B5927A91411FE /* Assets.xcassets */; };
+		5C661B761C2AC79F015F90A5 /* RecordingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A510C4DD213771E79575B0 /* RecordingsSection.swift */; };
+		5F19E73B6D21393818898DB3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295C01B3E78F34DAF57A5283 /* WidgetKit.framework */; };
+		648472C75C23AE2EBADBADBD /* AudioTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136A3D6331898C84E4824DF7 /* AudioTools.swift */; };
+		671F10566B04DBD4258786CD /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE788A4CEB39EE387C93620 /* DataManagementView.swift */; };
+		677AE320A79759D7D65E4977 /* IntentRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */; };
+		70691E8EA97AB0D326BAE3D0 /* PracticeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9250D1A8DF58E9E68DAB76 /* PracticeActivityAttributes.swift */; };
+		73DB4E041665C49402BC95E5 /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E70D74C01859674E3CD04A4 /* TodayWidget.swift */; };
+		741DBDA982903EA1958939EF /* PracticeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E22BF75194F034F79AA987 /* PracticeControl.swift */; };
+		76C535BB6C8D6923A49E80E9 /* RepertoireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB1ECD95E7120E27250761 /* RepertoireView.swift */; };
+		7B522C222710C13B8CCC5CB1 /* ActiveSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCCF3FA930F49E1DF3129F /* ActiveSessionView.swift */; };
+		7F7360614EBF4022F85C2AC4 /* InstrumentsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00A6E23E54F7FC3B232EB6 /* InstrumentsSettingsView.swift */; };
+		8266FA864917C73D4778B1CA /* DroneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31970C96DBD0B4E226E3BD9B /* DroneView.swift */; };
+		8437791F1489C7A9CCBADA4B /* WeeklyReportRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524327086F55A6BC6E383C1A /* WeeklyReportRenderer.swift */; };
+		843F526778A65EFA3616A979 /* OstinatoWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		87973CD56792840A379AE677 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6642D7E97794FED22D296 /* HistoryView.swift */; };
+		88DA54093EA0F85E06B343F6 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D63C022A09FD00593C2C66 /* StatsView.swift */; };
+		88F3F88AC520B03E5E198DCD /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5EB7D1ECCBD41FF0AC4D7 /* Components.swift */; };
+		8FD406F83A2DB6903E647934 /* SessionIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB840194D6C85A72D856749 /* SessionIntents.swift */; };
+		93552F493E7D1BA56353C275 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832776BC7C65DAF5C98CFDB /* AppModel.swift */; };
+		96EF8FF15E3ABE54E0263C1B /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49C599D59155C53797AC20B2 /* PracticeKit */; };
+		98F0E30872FA98E588F7B5A9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D7103DA966CD970C42EDF78B /* Localizable.xcstrings */; };
+		9985EBE20FE80EC569F6F6E3 /* WatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A9DFC928610CA6ABBE993 /* WatchModel.swift */; };
+		A85473939388C2EABA7A1C86 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485B5CD0A27D1F8C6290FEF3 /* LiveActivityManager.swift */; };
+		AA34F9A299A27EC388CF4C0A /* ReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7F3A3404916F8843922CB8 /* ReminderScheduler.swift */; };
+		B1CA0343394D59965A34E056 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C061B4F103356B79F368434 /* RootView.swift */; };
+		B1E104AE51FF49C5691F0109 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 312AC554D43C76D7D62DA42D /* Localizable.xcstrings */; };
+		B2D74C331823B6F3F8C6DB3E /* PracticeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDED74D9C28B70E1BCFDD39 /* PracticeHomeView.swift */; };
+		B499484255E4CDD2725B8437 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9BC3BFE9F1B3D740C605F4EF /* Localizable.xcstrings */; };
+		B6959C27C5EB066FE7BA924E /* OstinatoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E392669373592FBF3F916789 /* OstinatoApp.swift */; };
+		BB14EBB2C7CF26A71668964C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B15AEBF1DCB50402872745B /* SwiftUI.framework */; };
+		BF2CE156DAD396BAAD807F2E /* WatchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D33D43DF7765A5E7C23F8 /* WatchViews.swift */; };
+		C174DD7C6E3C8AFAC6980E16 /* LogIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */; };
+		C4F468B10B5B793AD59F9C60 /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D92724475520608AD132B1 /* WatchConnector.swift */; };
+		C85DBA844F7D167469482AE3 /* OstinatoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7567C0277C4C932A293215 /* OstinatoUITests.swift */; };
+		CE75BC1CCF86468FDC13195F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B15AEBF1DCB50402872745B /* SwiftUI.framework */; };
+		D25B66AAEDB0804962D42ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C131BD1C62FDB1018E957F /* Assets.xcassets */; };
+		E0E563CB4BF10D871AD2747C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2CEC85CDDC2DA9CFB3E96C22 /* PrivacyInfo.xcprivacy */; };
+		E19C32B96548C69C6703B449 /* OstinatoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */; };
+		E487AC9E6F720DFAD2385E18 /* StatsCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCC79E8A86B90C009A693C /* StatsCharts.swift */; };
+		E57D3B198ABF1B0442B278A9 /* OstinatoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */; };
+		F06318D3B45B48CE2703CAE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD3472F04824FF78CAD1F40 /* Assets.xcassets */; };
+		F18CF3DC66038935C49CA5F4 /* PracticeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9250D1A8DF58E9E68DAB76 /* PracticeActivityAttributes.swift */; };
+		F68601D53AE3C2019D4F3B89 /* ManualLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27464A8DBA882F38AC58457 /* ManualLogView.swift */; };
+		FA32469CA1F4965F1E2B023C /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC57CA7661DA2AAF753BFAD /* AppSettings.swift */; };
+		FB3BC3E20E30193457B6E52D /* OstinatoWatchWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D28A259632673F502792F109 /* OstinatoWatchWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC0C4DECC1878E545C593A4B /* OstinatoWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6628834B81AB509B7AA14F00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0295B5099C9DC5EA316C5148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A8ECC4BE16E1C6348D16A52;
+			remoteInfo = OstinatoWidgets;
+		};
+		6B29A1DCD9F9170000B3160A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0295B5099C9DC5EA316C5148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16EE4D24B01DD8C51A5FF14B;
+			remoteInfo = OstinatoWatchWidgets;
+		};
+		79A01A737F9D37D1800F9AFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0295B5099C9DC5EA316C5148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E728BDAEFE7FCF150AA8C7CB;
+			remoteInfo = Ostinato;
+		};
+		8FDAD6D914AA0AC646BDC340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0295B5099C9DC5EA316C5148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFEBE3D5CBF6BF527FA7C766;
+			remoteInfo = OstinatoWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C08DAAA53CC88F500349020 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB3BC3E20E30193457B6E52D /* OstinatoWatchWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89FB71F94E55FBB8F6A8190E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC0C4DECC1878E545C593A4B /* OstinatoWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1CF18E281F3A12A5035CB73 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				843F526778A65EFA3616A979 /* OstinatoWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0BC6642D7E97794FED22D296 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0C7567C0277C4C932A293215 /* OstinatoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoUITests.swift; sourceTree = "<group>"; };
+		136A3D6331898C84E4824DF7 /* AudioTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTools.swift; sourceTree = "<group>"; };
+		174A2934BC4722B0E49D539B /* Ostinato.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Ostinato.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE5EB7D1ECCBD41FF0AC4D7 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		1C061B4F103356B79F368434 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1E7F3A3404916F8843922CB8 /* ReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScheduler.swift; sourceTree = "<group>"; };
+		25D63C022A09FD00593C2C66 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		26BDE23D57ABD464D6B5EC97 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		28EBFA92C26512C85FAA083A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		295C01B3E78F34DAF57A5283 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2CEC85CDDC2DA9CFB3E96C22 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2D4BDD89157496BFFDE8DEE5 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		2FB840194D6C85A72D856749 /* SessionIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionIntents.swift; sourceTree = "<group>"; };
+		312AC554D43C76D7D62DA42D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		31970C96DBD0B4E226E3BD9B /* DroneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneView.swift; sourceTree = "<group>"; };
+		37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OstinatoWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B6BFA5B6F0C002BC3BEBEC /* TunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
+		3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentRuntime.swift; sourceTree = "<group>"; };
+		41BC2C2ABE14489691936272 /* OstinatoWatchWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoWatchWidgets.swift; sourceTree = "<group>"; };
+		466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIntents.swift; sourceTree = "<group>"; };
+		47DD1A883FD157D606A260E2 /* OstinatoWatchWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OstinatoWatchWidgets.entitlements; sourceTree = "<group>"; };
+		485B5CD0A27D1F8C6290FEF3 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		49088E6EA2AD11A7B9850ED3 /* PracticeEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeEntities.swift; sourceTree = "<group>"; };
+		4DF132599FEF0A46270436E3 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		4E70D74C01859674E3CD04A4 /* TodayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidget.swift; sourceTree = "<group>"; };
+		524327086F55A6BC6E383C1A /* WeeklyReportRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReportRenderer.swift; sourceTree = "<group>"; };
+		56D92724475520608AD132B1 /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
+		58127439CAB9272C8EEC8A36 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		59C131BD1C62FDB1018E957F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59FF1D7FD9E21DDEE7500627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		622D33D43DF7765A5E7C23F8 /* WatchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchViews.swift; sourceTree = "<group>"; };
+		67E3E14E3251F5EDF9EA338D /* SyncStatusMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncStatusMonitor.swift; sourceTree = "<group>"; };
+		6A7A9DFC928610CA6ABBE993 /* WatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchModel.swift; sourceTree = "<group>"; };
+		6CDED74D9C28B70E1BCFDD39 /* PracticeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHomeView.swift; sourceTree = "<group>"; };
+		77E22BF75194F034F79AA987 /* PracticeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeControl.swift; sourceTree = "<group>"; };
+		7D00A6E23E54F7FC3B232EB6 /* InstrumentsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsSettingsView.swift; sourceTree = "<group>"; };
+		81CCC79E8A86B90C009A693C /* StatsCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCharts.swift; sourceTree = "<group>"; };
+		848EA486AE5BA832DC435394 /* PracticeLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeLiveActivity.swift; sourceTree = "<group>"; };
+		8604A3A8FFC6C1BAA50E9016 /* OstinatoWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OstinatoWidgets.entitlements; sourceTree = "<group>"; };
+		88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OstinatoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B15AEBF1DCB50402872745B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoWidgetBundle.swift; sourceTree = "<group>"; };
+		97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneWatchSync.swift; sourceTree = "<group>"; };
+		9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoShortcuts.swift; sourceTree = "<group>"; };
+		9BC3BFE9F1B3D740C605F4EF /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9D9250D1A8DF58E9E68DAB76 /* PracticeActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeActivityAttributes.swift; sourceTree = "<group>"; };
+		A2D467BF1198CD1FAE688E83 /* FinishSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishSessionView.swift; sourceTree = "<group>"; };
+		A40EA638E76B5927A91411FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4A510C4DD213771E79575B0 /* RecordingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsSection.swift; sourceTree = "<group>"; };
+		AB16B20BBFFCFE5FBE565FC1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		BAE788A4CEB39EE387C93620 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
+		BC2D5D3F1854E61FCED876C3 /* MetronomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeView.swift; sourceTree = "<group>"; };
+		C19A78C960924A8A80662998 /* Ostinato.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ostinato.entitlements; sourceTree = "<group>"; };
+		C31CEB4A495C4BE4D1AA5DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C6ACFFD7AC30CC10FFEDA00A /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		C832776BC7C65DAF5C98CFDB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		CBC57CA7661DA2AAF753BFAD /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		D27464A8DBA882F38AC58457 /* ManualLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLogView.swift; sourceTree = "<group>"; };
+		D28A259632673F502792F109 /* OstinatoWatchWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OstinatoWatchWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C4EB1A93D04BC25C6ED5F9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		D7103DA966CD970C42EDF78B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D76FF06F8E828FC99BB47259 /* PracticeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PracticeKit; path = Packages/PracticeKit; sourceTree = SOURCE_ROOT; };
+		D9E2DEAB4001DFC4F1B192F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCDB1ECD95E7120E27250761 /* RepertoireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireView.swift; sourceTree = "<group>"; };
+		DDB846FAE7583A508B181F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E052A7D90B07E27E04CAEA24 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E392669373592FBF3F916789 /* OstinatoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoApp.swift; sourceTree = "<group>"; };
+		E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OstinatoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFiles.swift; sourceTree = "<group>"; };
+		E8A6C56DE36841E76B526BAC /* OstinatoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OstinatoWatch.entitlements; sourceTree = "<group>"; };
+		F9DCCF3FA930F49E1DF3129F /* ActiveSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionView.swift; sourceTree = "<group>"; };
+		FCD3472F04824FF78CAD1F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EC5A552DAC024A0515617AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B554B44D9097CA21915BB53 /* PracticeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DA87D518FFA4C45025FE48A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3501B9121049076C089511CE /* PracticeKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9B74B24A8C0D4ED2E9172CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96EF8FF15E3ABE54E0263C1B /* PracticeKit in Frameworks */,
+				08A42A5727E4FECC2EC2D1AA /* WidgetKit.framework in Frameworks */,
+				CE75BC1CCF86468FDC13195F /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF29B45B692AAF4EC4542519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05652AA2B7D72D30AA3B59E5 /* PracticeKit in Frameworks */,
+				5F19E73B6D21393818898DB3 /* WidgetKit.framework in Frameworks */,
+				BB14EBB2C7CF26A71668964C /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B23D4933058FF845CFD03A1 /* WatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				18284EFDB12AE8EA167B806E /* Resources */,
+				59FF1D7FD9E21DDEE7500627 /* Info.plist */,
+				E8A6C56DE36841E76B526BAC /* OstinatoWatch.entitlements */,
+				56D92724475520608AD132B1 /* WatchConnector.swift */,
+				6A7A9DFC928610CA6ABBE993 /* WatchModel.swift */,
+				622D33D43DF7765A5E7C23F8 /* WatchViews.swift */,
+			);
+			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		108BC5E88066218CBBB67783 = {
+			isa = PBXGroup;
+			children = (
+				7F6E0FBD9DCA5EB62551A876 /* App */,
+				B5460EA949CA9F4929110A03 /* Config */,
+				D85A2E24AC1EAE27EBC35831 /* Packages */,
+				B1719F16FF0362CE072F2BC8 /* Shared */,
+				D7ED924C5B6061788170E64C /* UITests */,
+				0B23D4933058FF845CFD03A1 /* WatchApp */,
+				401C925A2FD1CD4C821A8355 /* WatchWidgets */,
+				A83027F6DF78223EFDDAAEB7 /* Widgets */,
+				A91653F0258C453FD36EE2CA /* Frameworks */,
+				19E4A2345F33EB66FED35604 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18284EFDB12AE8EA167B806E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A40EA638E76B5927A91411FE /* Assets.xcassets */,
+				D7103DA966CD970C42EDF78B /* Localizable.xcstrings */,
+				E052A7D90B07E27E04CAEA24 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		19E4A2345F33EB66FED35604 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				174A2934BC4722B0E49D539B /* Ostinato.app */,
+				88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */,
+				E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */,
+				D28A259632673F502792F109 /* OstinatoWatchWidgets.appex */,
+				37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F2CE72518B9F1A2ED92169 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				58127439CAB9272C8EEC8A36 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		401C925A2FD1CD4C821A8355 /* WatchWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				EE3CF10A889F4D18B777B4C0 /* Resources */,
+				C31CEB4A495C4BE4D1AA5DFC /* Info.plist */,
+				47DD1A883FD157D606A260E2 /* OstinatoWatchWidgets.entitlements */,
+				41BC2C2ABE14489691936272 /* OstinatoWatchWidgets.swift */,
+			);
+			path = WatchWidgets;
+			sourceTree = "<group>";
+		};
+		46FDCC5C4DEEF9F7350AF469 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				6CDED74D9C28B70E1BCFDD39 /* PracticeHomeView.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		481A3365CABCD6A8D2AA4A47 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				3AAD452C5336192AACBDB1B3 /* IntentRuntime.swift */,
+				466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */,
+				49088E6EA2AD11A7B9850ED3 /* PracticeEntities.swift */,
+				2FB840194D6C85A72D856749 /* SessionIntents.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		73ED7CE0D58382D7C2C9727B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				485B5CD0A27D1F8C6290FEF3 /* LiveActivityManager.swift */,
+				97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */,
+				E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */,
+				1E7F3A3404916F8843922CB8 /* ReminderScheduler.swift */,
+				67E3E14E3251F5EDF9EA338D /* SyncStatusMonitor.swift */,
+				524327086F55A6BC6E383C1A /* WeeklyReportRenderer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		74E08CA8AB5E5500F5CD6F4E /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		756EDE6B95FF9EC66C41AD0A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				31970C96DBD0B4E226E3BD9B /* DroneView.swift */,
+				BC2D5D3F1854E61FCED876C3 /* MetronomeView.swift */,
+				39B6BFA5B6F0C002BC3BEBEC /* TunerView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7F6E0FBD9DCA5EB62551A876 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				868721B947DC23CB41D06C34 /* Components */,
+				82936945F367A3ED27F74239 /* Core */,
+				E5C03849AC393CF6A42B8E03 /* History */,
+				74E08CA8AB5E5500F5CD6F4E /* Intents */,
+				37F2CE72518B9F1A2ED92169 /* Onboarding */,
+				46FDCC5C4DEEF9F7350AF469 /* Practice */,
+				B9DA71FD08BE1EE1CA626AD0 /* Repertoire */,
+				A4CDA55BC2D0AC0320409497 /* Resources */,
+				73ED7CE0D58382D7C2C9727B /* Services */,
+				BD8D1DBA93AC61481D9B7CEA /* Session */,
+				F497B07AA0898D66F205067D /* Settings */,
+				A0457E41589E0B18CBA175D4 /* Stats */,
+				756EDE6B95FF9EC66C41AD0A /* Tools */,
+				28EBFA92C26512C85FAA083A /* Info.plist */,
+				C19A78C960924A8A80662998 /* Ostinato.entitlements */,
+				E392669373592FBF3F916789 /* OstinatoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		82936945F367A3ED27F74239 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C832776BC7C65DAF5C98CFDB /* AppModel.swift */,
+				CBC57CA7661DA2AAF753BFAD /* AppSettings.swift */,
+				136A3D6331898C84E4824DF7 /* AudioTools.swift */,
+				1C061B4F103356B79F368434 /* RootView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		868721B947DC23CB41D06C34 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1AE5EB7D1ECCBD41FF0AC4D7 /* Components.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9A50F4394E6A4EE53D2646B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				59C131BD1C62FDB1018E957F /* Assets.xcassets */,
+				312AC554D43C76D7D62DA42D /* Localizable.xcstrings */,
+				D3C4EB1A93D04BC25C6ED5F9 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A0457E41589E0B18CBA175D4 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				81CCC79E8A86B90C009A693C /* StatsCharts.swift */,
+				25D63C022A09FD00593C2C66 /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		A4CDA55BC2D0AC0320409497 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D9E2DEAB4001DFC4F1B192F6 /* Assets.xcassets */,
+				9BC3BFE9F1B3D740C605F4EF /* Localizable.xcstrings */,
+				AB16B20BBFFCFE5FBE565FC1 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A83027F6DF78223EFDDAAEB7 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				9A50F4394E6A4EE53D2646B1 /* Resources */,
+				DDB846FAE7583A508B181F59 /* Info.plist */,
+				94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */,
+				8604A3A8FFC6C1BAA50E9016 /* OstinatoWidgets.entitlements */,
+				77E22BF75194F034F79AA987 /* PracticeControl.swift */,
+				848EA486AE5BA832DC435394 /* PracticeLiveActivity.swift */,
+				4E70D74C01859674E3CD04A4 /* TodayWidget.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		A91653F0258C453FD36EE2CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B15AEBF1DCB50402872745B /* SwiftUI.framework */,
+				295C01B3E78F34DAF57A5283 /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1719F16FF0362CE072F2BC8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				481A3365CABCD6A8D2AA4A47 /* Intents */,
+				9D9250D1A8DF58E9E68DAB76 /* PracticeActivityAttributes.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		B5460EA949CA9F4929110A03 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2D4BDD89157496BFFDE8DEE5 /* Shared.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B9DA71FD08BE1EE1CA626AD0 /* Repertoire */ = {
+			isa = PBXGroup;
+			children = (
+				C6ACFFD7AC30CC10FFEDA00A /* ItemDetailView.swift */,
+				A4A510C4DD213771E79575B0 /* RecordingsSection.swift */,
+				DCDB1ECD95E7120E27250761 /* RepertoireView.swift */,
+			);
+			path = Repertoire;
+			sourceTree = "<group>";
+		};
+		BD8D1DBA93AC61481D9B7CEA /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				F9DCCF3FA930F49E1DF3129F /* ActiveSessionView.swift */,
+				A2D467BF1198CD1FAE688E83 /* FinishSessionView.swift */,
+				D27464A8DBA882F38AC58457 /* ManualLogView.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		D7ED924C5B6061788170E64C /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C7567C0277C4C932A293215 /* OstinatoUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		D85A2E24AC1EAE27EBC35831 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D76FF06F8E828FC99BB47259 /* PracticeKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		E5C03849AC393CF6A42B8E03 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0BC6642D7E97794FED22D296 /* HistoryView.swift */,
+				4DF132599FEF0A46270436E3 /* SessionDetailView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		EE3CF10A889F4D18B777B4C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCD3472F04824FF78CAD1F40 /* Assets.xcassets */,
+				2CEC85CDDC2DA9CFB3E96C22 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F497B07AA0898D66F205067D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BAE788A4CEB39EE387C93620 /* DataManagementView.swift */,
+				7D00A6E23E54F7FC3B232EB6 /* InstrumentsSettingsView.swift */,
+				26BDE23D57ABD464D6B5EC97 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16EE4D24B01DD8C51A5FF14B /* OstinatoWatchWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50A3751B0EDC950F0E2500F1 /* Build configuration list for PBXNativeTarget "OstinatoWatchWidgets" */;
+			buildPhases = (
+				94DA413F83989FC231296D81 /* Sources */,
+				C28838F0A6EDF624C34A364A /* Resources */,
+				C9B74B24A8C0D4ED2E9172CC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OstinatoWatchWidgets;
+			packageProductDependencies = (
+				49C599D59155C53797AC20B2 /* PracticeKit */,
+			);
+			productName = OstinatoWatchWidgets;
+			productReference = D28A259632673F502792F109 /* OstinatoWatchWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2A8ECC4BE16E1C6348D16A52 /* OstinatoWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D98E04E6D6B4D270F33BEDE /* Build configuration list for PBXNativeTarget "OstinatoWidgets" */;
+			buildPhases = (
+				D2019DC53988EEC902390414 /* Sources */,
+				7F08E22062E19ABBE13CA0EE /* Resources */,
+				EF29B45B692AAF4EC4542519 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OstinatoWidgets;
+			packageProductDependencies = (
+				14992B7AC00D0CD9AEBD59CC /* PracticeKit */,
+			);
+			productName = OstinatoWidgets;
+			productReference = 37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D4772DD86D4C6B134D1DEDF2 /* OstinatoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3149C92CB1053D8D9A2137C2 /* Build configuration list for PBXNativeTarget "OstinatoUITests" */;
+			buildPhases = (
+				522F8FBF19E1688343AC6D0D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2E6A55F10D924159B7F2E45 /* PBXTargetDependency */,
+			);
+			name = OstinatoUITests;
+			packageProductDependencies = (
+			);
+			productName = OstinatoUITests;
+			productReference = 88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E728BDAEFE7FCF150AA8C7CB /* Ostinato */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F465FB697AB9ABE2B5BD584 /* Build configuration list for PBXNativeTarget "Ostinato" */;
+			buildPhases = (
+				0CBA81A1C797F3D0FA70C85F /* Sources */,
+				10D2EA060ADBF764C0B059AC /* Resources */,
+				9DA87D518FFA4C45025FE48A /* Frameworks */,
+				89FB71F94E55FBB8F6A8190E /* Embed Foundation Extensions */,
+				C1CF18E281F3A12A5035CB73 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA782C51FDCE9B580A8ED51B /* PBXTargetDependency */,
+				5EF335E097CABDA05974198C /* PBXTargetDependency */,
+			);
+			name = Ostinato;
+			packageProductDependencies = (
+				105E1EC1E11AA45D90D1E50A /* PracticeKit */,
+			);
+			productName = Ostinato;
+			productReference = 174A2934BC4722B0E49D539B /* Ostinato.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFEBE3D5CBF6BF527FA7C766 /* OstinatoWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5529AA80D9035B1F984A8DDC /* Build configuration list for PBXNativeTarget "OstinatoWatch" */;
+			buildPhases = (
+				A93993679CCF01AAE57BB783 /* Sources */,
+				42C038EFCD99FD60904DCBEA /* Resources */,
+				4EC5A552DAC024A0515617AB /* Frameworks */,
+				2C08DAAA53CC88F500349020 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6CD651CC4D8CEE5731D6E3B /* PBXTargetDependency */,
+			);
+			name = OstinatoWatch;
+			packageProductDependencies = (
+				244545B2F9C9DD1A95AAA898 /* PracticeKit */,
+			);
+			productName = OstinatoWatch;
+			productReference = E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0295B5099C9DC5EA316C5148 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					16EE4D24B01DD8C51A5FF14B = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					2A8ECC4BE16E1C6348D16A52 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					D4772DD86D4C6B134D1DEDF2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+						TestTargetID = E728BDAEFE7FCF150AA8C7CB;
+					};
+					E728BDAEFE7FCF150AA8C7CB = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					EFEBE3D5CBF6BF527FA7C766 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A8B0E0F51B5B5ABFC0B9084B /* Build configuration list for PBXProject "Ostinato" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 108BC5E88066218CBBB67783;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				316C8DD1660C3DB3E7ED15A9 /* XCLocalSwiftPackageReference "Packages/PracticeKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 19E4A2345F33EB66FED35604 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E728BDAEFE7FCF150AA8C7CB /* Ostinato */,
+				2A8ECC4BE16E1C6348D16A52 /* OstinatoWidgets */,
+				EFEBE3D5CBF6BF527FA7C766 /* OstinatoWatch */,
+				16EE4D24B01DD8C51A5FF14B /* OstinatoWatchWidgets */,
+				D4772DD86D4C6B134D1DEDF2 /* OstinatoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10D2EA060ADBF764C0B059AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E7CDDBDF03BA5821729D2D7 /* Assets.xcassets in Resources */,
+				B499484255E4CDD2725B8437 /* Localizable.xcstrings in Resources */,
+				3ED1D59B9D373CFE5E09B956 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42C038EFCD99FD60904DCBEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586D4B178C66322FC1FE03D7 /* Assets.xcassets in Resources */,
+				98F0E30872FA98E588F7B5A9 /* Localizable.xcstrings in Resources */,
+				06E41DB4826DA6F8D73EA3EE /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F08E22062E19ABBE13CA0EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D25B66AAEDB0804962D42ED6 /* Assets.xcassets in Resources */,
+				B1E104AE51FF49C5691F0109 /* Localizable.xcstrings in Resources */,
+				1E8E2F3966D38EF96471A02F /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C28838F0A6EDF624C34A364A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F06318D3B45B48CE2703CAE7 /* Assets.xcassets in Resources */,
+				E0E563CB4BF10D871AD2747C /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CBA81A1C797F3D0FA70C85F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B522C222710C13B8CCC5CB1 /* ActiveSessionView.swift in Sources */,
+				93552F493E7D1BA56353C275 /* AppModel.swift in Sources */,
+				FA32469CA1F4965F1E2B023C /* AppSettings.swift in Sources */,
+				648472C75C23AE2EBADBADBD /* AudioTools.swift in Sources */,
+				88F3F88AC520B03E5E198DCD /* Components.swift in Sources */,
+				671F10566B04DBD4258786CD /* DataManagementView.swift in Sources */,
+				8266FA864917C73D4778B1CA /* DroneView.swift in Sources */,
+				1C6A3604640F35EAF0D01607 /* FinishSessionView.swift in Sources */,
+				87973CD56792840A379AE677 /* HistoryView.swift in Sources */,
+				7F7360614EBF4022F85C2AC4 /* InstrumentsSettingsView.swift in Sources */,
+				677AE320A79759D7D65E4977 /* IntentRuntime.swift in Sources */,
+				2B1BC3EC34C528F13422EDD2 /* ItemDetailView.swift in Sources */,
+				A85473939388C2EABA7A1C86 /* LiveActivityManager.swift in Sources */,
+				C174DD7C6E3C8AFAC6980E16 /* LogIntents.swift in Sources */,
+				F68601D53AE3C2019D4F3B89 /* ManualLogView.swift in Sources */,
+				364DAF08FABDE0D43F0F64DB /* MetronomeView.swift in Sources */,
+				06E0E4EA0C61D0CDE594C1D9 /* OnboardingView.swift in Sources */,
+				B6959C27C5EB066FE7BA924E /* OstinatoApp.swift in Sources */,
+				E19C32B96548C69C6703B449 /* OstinatoShortcuts.swift in Sources */,
+				3FB70C54DE6084A4DAF04916 /* PhoneWatchSync.swift in Sources */,
+				70691E8EA97AB0D326BAE3D0 /* PracticeActivityAttributes.swift in Sources */,
+				5351E27398A4A009DDE74625 /* PracticeEntities.swift in Sources */,
+				B2D74C331823B6F3F8C6DB3E /* PracticeHomeView.swift in Sources */,
+				2468C103AAE1AE9282177392 /* RecordingFiles.swift in Sources */,
+				5C661B761C2AC79F015F90A5 /* RecordingsSection.swift in Sources */,
+				AA34F9A299A27EC388CF4C0A /* ReminderScheduler.swift in Sources */,
+				76C535BB6C8D6923A49E80E9 /* RepertoireView.swift in Sources */,
+				B1CA0343394D59965A34E056 /* RootView.swift in Sources */,
+				10B0FBE46FF6863C1F748870 /* SessionDetailView.swift in Sources */,
+				172A6DD0716D45675BFC6E3D /* SessionIntents.swift in Sources */,
+				1EA45106483E9522E6FE7412 /* SettingsView.swift in Sources */,
+				E487AC9E6F720DFAD2385E18 /* StatsCharts.swift in Sources */,
+				88DA54093EA0F85E06B343F6 /* StatsView.swift in Sources */,
+				25B7B1C78F513A8C89E9EECD /* SyncStatusMonitor.swift in Sources */,
+				1D153B8629C582FEAC13E257 /* TunerView.swift in Sources */,
+				8437791F1489C7A9CCBADA4B /* WeeklyReportRenderer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		522F8FBF19E1688343AC6D0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85DBA844F7D167469482AE3 /* OstinatoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DA413F83989FC231296D81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A390BF7C3248DB8CD615C3 /* OstinatoWatchWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A93993679CCF01AAE57BB783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4F468B10B5B793AD59F9C60 /* WatchConnector.swift in Sources */,
+				9985EBE20FE80EC569F6F6E3 /* WatchModel.swift in Sources */,
+				BF2CE156DAD396BAAD807F2E /* WatchViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2019DC53988EEC902390414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49038E48B1862A22F30FE754 /* IntentRuntime.swift in Sources */,
+				2F8A0B54B25604450ED3D24A /* LogIntents.swift in Sources */,
+				E57D3B198ABF1B0442B278A9 /* OstinatoWidgetBundle.swift in Sources */,
+				F18CF3DC66038935C49CA5F4 /* PracticeActivityAttributes.swift in Sources */,
+				741DBDA982903EA1958939EF /* PracticeControl.swift in Sources */,
+				313D65B3C4F1926CD72D56DA /* PracticeEntities.swift in Sources */,
+				1C7B03AA449EE5699D17D784 /* PracticeLiveActivity.swift in Sources */,
+				8FD406F83A2DB6903E647934 /* SessionIntents.swift in Sources */,
+				73DB4E041665C49402BC95E5 /* TodayWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EF335E097CABDA05974198C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFEBE3D5CBF6BF527FA7C766 /* OstinatoWatch */;
+			targetProxy = 8FDAD6D914AA0AC646BDC340 /* PBXContainerItemProxy */;
+		};
+		C2E6A55F10D924159B7F2E45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E728BDAEFE7FCF150AA8C7CB /* Ostinato */;
+			targetProxy = 79A01A737F9D37D1800F9AFE /* PBXContainerItemProxy */;
+		};
+		F6CD651CC4D8CEE5731D6E3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16EE4D24B01DD8C51A5FF14B /* OstinatoWatchWidgets */;
+			targetProxy = 6B29A1DCD9F9170000B3160A /* PBXContainerItemProxy */;
+		};
+		FA782C51FDCE9B580A8ED51B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A8ECC4BE16E1C6348D16A52 /* OstinatoWidgets */;
+			targetProxy = 6628834B81AB509B7AA14F00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C93983D20F72BE2C578336E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WatchWidgets/OstinatoWatchWidgets.entitlements;
+				INFOPLIST_FILE = WatchWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp.widgets";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		1DB50920372F723392616B93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4BDD89157496BFFDE8DEE5 /* Shared.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		2AF701581A90FC6C64370E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widgets/OstinatoWidgets.entitlements;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).widgets";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B5CA0395123D87C36DAED3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WatchWidgets/OstinatoWatchWidgets.entitlements;
+				INFOPLIST_FILE = WatchWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp.widgets";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		44A1F1697E1BB8874261F3CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Widgets/OstinatoWidgets.entitlements;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).widgets";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		710FB05E8CD346494F685AE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).uitests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ostinato;
+			};
+			name = Release;
+		};
+		84F9C54C345D858C62DA668D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Ostinato.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85C2DB6704ECE25220B58F84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = App/Ostinato.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92242E1BC2460E062EE22ED9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).uitests";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ostinato;
+			};
+			name = Debug;
+		};
+		9C28C58DB8F8165233F15756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/OstinatoWatch.entitlements;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		9D1797707EC20F9E00DFD803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WatchApp/OstinatoWatch.entitlements;
+				INFOPLIST_FILE = WatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		D13E88C6317C1988EFDCE4E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4BDD89157496BFFDE8DEE5 /* Shared.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3149C92CB1053D8D9A2137C2 /* Build configuration list for PBXNativeTarget "OstinatoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92242E1BC2460E062EE22ED9 /* Debug */,
+				710FB05E8CD346494F685AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		50A3751B0EDC950F0E2500F1 /* Build configuration list for PBXNativeTarget "OstinatoWatchWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C93983D20F72BE2C578336E /* Debug */,
+				3B5CA0395123D87C36DAED3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5529AA80D9035B1F984A8DDC /* Build configuration list for PBXNativeTarget "OstinatoWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C28C58DB8F8165233F15756 /* Debug */,
+				9D1797707EC20F9E00DFD803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F465FB697AB9ABE2B5BD584 /* Build configuration list for PBXNativeTarget "Ostinato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C2DB6704ECE25220B58F84 /* Debug */,
+				84F9C54C345D858C62DA668D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D98E04E6D6B4D270F33BEDE /* Build configuration list for PBXNativeTarget "OstinatoWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF701581A90FC6C64370E76 /* Debug */,
+				44A1F1697E1BB8874261F3CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A8B0E0F51B5B5ABFC0B9084B /* Build configuration list for PBXProject "Ostinato" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D13E88C6317C1988EFDCE4E0 /* Debug */,
+				1DB50920372F723392616B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		316C8DD1660C3DB3E7ED15A9 /* XCLocalSwiftPackageReference "Packages/PracticeKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/PracticeKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		105E1EC1E11AA45D90D1E50A /* PracticeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PracticeKit;
+		};
+		14992B7AC00D0CD9AEBD59CC /* PracticeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PracticeKit;
+		};
+		244545B2F9C9DD1A95AAA898 /* PracticeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PracticeKit;
+		};
+		49C599D59155C53797AC20B2 /* PracticeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PracticeKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0295B5099C9DC5EA316C5148 /* Project object */;
+}
