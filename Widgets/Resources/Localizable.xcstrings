@@ -1,1 +1,126 @@
-{"sourceLanguage":"en","strings":{},"version":"1.0"}
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@": {
+      "shouldTranslate": false
+    },
+    "%lld": {
+      "shouldTranslate": false
+    },
+    "%lld min today": {},
+    "%lld min today · 🔥 %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld min today · 🔥 %2$lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld of %2$lld min"
+          }
+        }
+      }
+    },
+    "%lld-day streak": {},
+    "Adds a practice session you already did.": {},
+    "Already practicing %@.": {},
+    "Date": {},
+    "Enter between 1 and 1,440 minutes.": {},
+    "Finish": {},
+    "Finish Practice": {},
+    "General practice": {},
+    "Get Practice Summary": {},
+    "Instrument": {},
+    "Item": {},
+    "Log Practice": {},
+    "Logged %@ of %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Logged %1$@ of %2$@."
+          }
+        }
+      }
+    },
+    "Logged %@ of practice.": {},
+    "Minutes": {},
+    "Minutes practiced today and your streak.": {},
+    "Next": {},
+    "Next Practice Item": {},
+    "No practice logged this month yet.": {},
+    "No practice logged this week yet.": {},
+    "No practice logged today yet.": {},
+    "No practice session is running.": {},
+    "Now practicing %@.": {},
+    "Pause": {},
+    "Pause Practice": {},
+    "Pause or Resume Practice": {},
+    "Paused": {},
+    "Practice": {},
+    "Practice Item": {},
+    "Practice started.": {},
+    "Practicing": {},
+    "Range": {},
+    "Resume": {},
+    "Resume Practice": {},
+    "Start": {},
+    "Start Practice": {},
+    "Start or finish a practice session.": {},
+    "Starts timing a practice session.": {},
+    "Switch Practice Item": {},
+    "Switches the running session to another piece or exercise.": {},
+    "Tells you how much you practiced.": {},
+    "This Month": {},
+    "This Week": {},
+    "This week: %lld minutes": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "This week: %lld minute"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "This week: %lld minutes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Time Range": {},
+    "Today": {},
+    "Today's minutes at a glance.": {},
+    "Today: %lld of %lld minutes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Today: %1$lld of %2$lld minutes"
+          }
+        }
+      }
+    },
+    "You practiced %@ this month.": {},
+    "You practiced %@ this week.": {},
+    "You practiced %@ today.": {},
+    "of %lld min": {},
+    "practice": {},
+    "🔥 %lld-day streak": {}
+  },
+  "version": "1.0"
+}

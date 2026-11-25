@@ -48,13 +48,19 @@ final class AccessibilityAuditTests: XCTestCase {
     }
 
     func testSessionScreensPassAudit() {
-        XCTAssertTrue(app.buttons["startPractice"].waitForExistence(timeout: 10))
-        app.buttons["startPractice"].tap()
-        XCTAssertTrue(app.staticTexts["sessionTimer"].waitForExistence(timeout: 5))
+        // A freshly booted simulator can show the launch screen for a while
+        // (shader compilation) even though the button already exists; retry.
+        let start = app.buttons["startPractice"]
+        XCTAssertTrue(start.waitForExistence(timeout: 30))
+        for _ in 0..<3 where !app.staticTexts["sessionTimer"].exists {
+            if start.isHittable { start.tap() }
+            _ = app.staticTexts["sessionTimer"].waitForExistence(timeout: 20)
+        }
+        XCTAssertTrue(app.staticTexts["sessionTimer"].exists)
         app.buttons["pauseResume"].tap()   // paused timer stops redrawing, so the audit can settle
         audit("Active session")
         app.buttons["finishSession"].tap()
-        XCTAssertTrue(app.buttons["saveSession"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["saveSession"].waitForExistence(timeout: 15))
         audit("Finish sheet")
     }
 }

@@ -13,7 +13,8 @@ struct PracticeLiveActivity: Widget {
                 .activityBackgroundTint(nil)
                 .activitySystemActionForegroundColor(Color(hex: context.attributes.instrumentColorHex))
         } dynamicIsland: { context in
-            let tint = Color(hex: context.attributes.instrumentColorHex)
+            // The Dynamic Island is always dark: use the dark palette step.
+            let tint = Color(hex: InstrumentPalette.hex(context.attributes.instrumentColorHex, dark: true))
             return DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
                     Label(context.attributes.instrumentName, systemImage: context.attributes.instrumentSymbol)
@@ -26,7 +27,7 @@ struct PracticeLiveActivity: Widget {
                     Text(context.state.itemTitle).font(.headline).lineLimit(1)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    ActivityButtons(state: context.state)
+                    ActivityButtons(state: context.state, tint: tint)
                 }
             } compactLeading: {
                 Image(systemName: context.state.isPaused ? "pause.fill" : context.attributes.instrumentSymbol)
@@ -56,6 +57,7 @@ struct ActivityTimer: View {
 
 struct ActivityButtons: View {
     let state: PracticeActivityAttributes.ContentState
+    var tint: Color = .accentColor
 
     var body: some View {
         HStack(spacing: 10) {
@@ -75,6 +77,7 @@ struct ActivityButtons: View {
         }
         .font(.caption.bold())
         .buttonStyle(.bordered)
+        .tint(tint)
     }
 }
 
@@ -97,7 +100,7 @@ private struct LockScreenActivityView: View {
                 Spacer()
                 ActivityTimer(state: context.state).font(.title.bold())
             }
-            ActivityButtons(state: context.state)
+            ActivityButtons(state: context.state, tint: Color(hex: InstrumentPalette.hex(context.attributes.instrumentColorHex, dark: true)))
         }
         .padding()
     }

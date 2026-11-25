@@ -12,6 +12,7 @@ struct DataManagementView: View {
     @State private var backupURL: URL?
     @State private var recordingsZipURL: URL?
     @State private var reportURL: URL?
+    @State private var reportPeriod: ReportPeriod = .thisWeek
     @State private var importing = false
     @State private var message: String?
     @State private var confirmDelete = false
@@ -22,7 +23,11 @@ struct DataManagementView: View {
             Section {
                 exportRow("Practice log (CSV)", detail: "One row per item practiced. Opens in any spreadsheet.",
                           url: csvURL, prepare: makeCSV)
-                exportRow("Weekly report (PDF)", detail: "Minutes per day and per item, with notes. Good for your teacher.",
+                Picker("Report period", selection: $reportPeriod) {
+                    ForEach(ReportPeriod.allCases) { Text($0.displayName).tag($0) }
+                }
+                .onChange(of: reportPeriod) { reportURL = nil }
+                exportRow("Practice report (PDF)", detail: "Minutes per day, time and tempo per item, and notes. Good for your teacher.",
                           url: reportURL, prepare: makeReport)
             } header: {
                 Text("Share")
@@ -119,13 +124,14 @@ struct DataManagementView: View {
     }
 
     private func makeReport() {
-        let url = exportDirectory().appending(path: "Ostinato-week-\(stamp).pdf")
-        if WeeklyReportRenderer.renderPDF(context: context, goal: settings.goal, to: url) {
+        let url = exportDirectory().appending(path: "Ostinato-report-\(reportPeriod.fileStem(now: Date(), calendar: .current)).pdf")
+        if PracticeReportRenderer.renderPDF(context: context, goal: settings.goal, period: reportPeriod, to: url) {
             reportURL = url
         } else {
             message = String(localized: "Couldn't create the report. Try again.")
         }
     }
+
 
     private func importBackup(_ url: URL) {
         let accessing = url.startAccessingSecurityScopedResource()

@@ -121,3 +121,32 @@ struct ExportTests {
         #expect(storage.url(for: "take.m4a", at: .iCloud) == nil)
     }
 }
+
+@Suite("Report periods")
+struct ReportPeriodTests {
+    let ny = calendar("America/New_York")   // weeks start Monday in this helper
+    let now = date(2026, 3, 4, 15)          // Wednesday
+
+    @Test func weeks() {
+        let thisWeek = ReportPeriod.thisWeek.interval(now: now, calendar: ny)
+        #expect(thisWeek.start == ny.startOfDay(for: date(2026, 3, 2)))
+        #expect(thisWeek.end == ny.startOfDay(for: date(2026, 3, 9)))
+        let lastWeek = ReportPeriod.lastWeek.interval(now: now, calendar: ny)
+        #expect(lastWeek.start == ny.startOfDay(for: date(2026, 2, 23)))
+        #expect(lastWeek.end == thisWeek.start)
+    }
+
+    @Test func months() {
+        let lastMonth = ReportPeriod.lastMonth.interval(now: now, calendar: ny)
+        #expect(lastMonth.start == ny.startOfDay(for: date(2026, 2, 1)))
+        #expect(lastMonth.end == ny.startOfDay(for: date(2026, 3, 1)))
+        #expect(ReportPeriod.thisMonth.interval(now: now, calendar: ny).end == ny.startOfDay(for: date(2026, 4, 1)))
+    }
+
+    @Test func lastThirtyDaysIncludesToday() {
+        let interval = ReportPeriod.last30Days.interval(now: now, calendar: ny)
+        #expect(interval.contains(now))
+        #expect(ny.dateComponents([.day], from: interval.start, to: interval.end).day == 30)
+        #expect(ReportPeriod.last30Days.fileStem(now: now, calendar: ny) == "2026-02-03_to_2026-03-04")
+    }
+}

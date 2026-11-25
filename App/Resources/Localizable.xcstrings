@@ -1,1 +1,829 @@
-{"sourceLanguage":"en","strings":{},"version":"1.0"}
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "": {
+      "shouldTranslate": false
+    },
+    "%@": {
+      "shouldTranslate": false
+    },
+    "%@ %lld, %lld cents %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ %2$lld, %3$lld cents %4$@"
+          }
+        }
+      }
+    },
+    "%@ Hz": {},
+    "%@ of practice won't be saved.": {},
+    "%@ will be removed from your stats. Recordings are kept.": {},
+    "%@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$@"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "%@ – %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ – %2$@"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "%@%lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@%2$lld"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "%lld": {
+      "shouldTranslate": false
+    },
+    "%lld BPM": {},
+    "%lld beats per minute": {},
+    "%lld days": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld day"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld days reached %lld minutes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@days@ reached %2$lld minutes"
+          },
+          "substitutions": {
+            "days": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld min": {},
+    "%lld of %lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld of %2$lld min"
+          }
+        }
+      }
+    },
+    "%lld of %lld weeks": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of %#@weeks@"
+          },
+          "substitutions": {
+            "weeks": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg week"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg weeks"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld of %lld weeks met %lld practice days": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of %#@weeks@ met %#@days@"
+          },
+          "substitutions": {
+            "days": {
+              "argNum": 3,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg practice day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg practice days"
+                    }
+                  }
+                }
+              }
+            },
+            "weeks": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg week"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg weeks"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld of 5": {},
+    "%lld semitones": {},
+    "%lld-day streak": {},
+    "%lld/%lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld/%2$lld"
+          }
+        }
+      },
+      "shouldTranslate": false
+    },
+    "+%lld": {},
+    "0.5×": {},
+    "0.75×": {},
+    "1 year": {},
+    "1×": {},
+    "30 days": {},
+    "90 days": {},
+    "A few minutes today keeps things moving.": {},
+    "A piece, exercise or scale to track time on.": {},
+    "A4 = %lld Hz": {},
+    "A4 = %lld Hz. Change it in the tuner.": {},
+    "About": {},
+    "Accent first beat": {},
+    "Add": {},
+    "Add Instrument": {},
+    "Add Item": {},
+    "Add Tuning": {},
+    "Add and Switch": {},
+    "Add the pieces you're working on to track time per piece.": {},
+    "Added %lld records, updated %lld. %lld were already here.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added %#@ins@, updated %2$lld. %#@skip@ already here."
+          },
+          "substitutions": {
+            "ins": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg record"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg records"
+                    }
+                  }
+                }
+              }
+            },
+            "skip": {
+              "argNum": 3,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg was"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg were"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Adds a practice session you already did.": {},
+    "All audio files on this device.": {},
+    "All categories": {},
+    "All practice history and recordings will be permanently deleted.": {},
+    "All segments removed. The session will be saved with no time.": {},
+    "All statuses": {},
+    "All time": {},
+    "Already practicing %@.": {},
+    "Analyze Tempo and Key": {},
+    "Analyzed on this device. Estimates can be off for rubato or very quiet playing.": {},
+    "Analyzing tempo and key…": {},
+    "Apple Watch": {},
+    "Archive": {},
+    "Archive Instead": {},
+    "Archived": {},
+    "Archived instruments keep their history.": {},
+    "Archiving hides the item but keeps everything.": {},
+    "Are you sure?": {},
+    "At most one a day, and skipped once you reach your goal.": {},
+    "Average": {},
+    "BPM": {},
+    "Backup": {},
+    "Beat unit": {},
+    "Beats per bar: %lld": {},
+    "By category": {},
+    "By instrument": {},
+    "Can't play this recording": {},
+    "Cancel": {},
+    "Category": {},
+    "Choose a different instrument": {},
+    "Choose a session": {},
+    "Choose an item": {},
+    "Color": {},
+    "Combine into One": {},
+    "Composer (optional)": {},
+    "Concert pitch": {},
+    "Continue with": {},
+    "Couldn't create the backup. Try again.": {},
+    "Couldn't create the file. Try again.": {},
+    "Couldn't create the report. Try again.": {},
+    "Couldn't read those notes. Try something like D2 A2 D3 G3 A3 D4.": {},
+    "Couldn't save the session. Try again.": {},
+    "Couldn't start the metronome": {},
+    "Current item time": {},
+    "Current item: %@": {},
+    "Current streak %lld days, longest %lld days": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current streak %#@cur@, longest %#@long@"
+          },
+          "substitutions": {
+            "cur": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days"
+                    }
+                  }
+                }
+              }
+            },
+            "long": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Custom instrument": {},
+    "Custom time signature": {},
+    "Daily goal": {},
+    "Daily reminder": {},
+    "Date": {},
+    "Day": {},
+    "Days a week": {},
+    "Days per week": {},
+    "Delete": {},
+    "Delete %@?": {},
+    "Delete All Data": {},
+    "Delete Everything": {},
+    "Delete Item": {},
+    "Delete Recording": {},
+    "Delete Session": {},
+    "Delete all data?": {},
+    "Delete recordings older than": {},
+    "Delete this recording?": {},
+    "Delete this session?": {},
+    "Deleted item": {},
+    "Discard": {},
+    "Discard Session": {},
+    "Discard this session?": {},
+    "Done": {},
+    "Downloading from iCloud…": {},
+    "Drone": {},
+    "During practice": {},
+    "Edit": {},
+    "Edit Item": {},
+    "Edit Segment": {},
+    "Edit Tunings…": {},
+    "Edit this segment": {},
+    "Eighth": {},
+    "Enter between 1 and 1,440 minutes.": {},
+    "Every day counts toward your streak.": {},
+    "Everything except audio files.": {},
+    "Export, Import and Delete": {},
+    "Faster by %lld": {},
+    "Filter": {},
+    "Find an instrument": {},
+    "Fingerings, tricky bars, teacher feedback": {},
+    "Finish": {},
+    "Finish Practice": {},
+    "Finish Session": {},
+    "Finished sessions show up here, with time per item.": {},
+    "Flat": {},
+    "Focus": {},
+    "Full backup (JSON)": {},
+    "General": {},
+    "General practice": {},
+    "Get Practice Summary": {},
+    "Goal": {},
+    "History": {},
+    "How did it go?": {},
+    "Icon": {},
+    "Import": {},
+    "Import Backup": {},
+    "Importing adds what's missing and never creates duplicates.": {},
+    "In iCloud": {},
+    "In tune": {},
+    "Instrument": {},
+    "Instrument: %@": {},
+    "Instruments": {},
+    "Item": {},
+    "Keep Earlier Only": {},
+    "Keep Practicing": {},
+    "Keep Session": {},
+    "Keep screen awake": {},
+    "Label": {},
+    "Label (e.g. Warm-up)": {},
+    "Last 26 weeks": {},
+    "Listening": {},
+    "Log Past Session": {},
+    "Log Practice": {},
+    "Log Tempo": {},
+    "Logged %@ of %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Logged %1$@ of %2$@."
+          }
+        }
+      }
+    },
+    "Logged %@ of practice.": {},
+    "Logged from": {},
+    "Longest %lld": {},
+    "Loudness %@ dB, peak %@ dB": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Loudness %1$@ dB, peak %2$@ dB"
+          }
+        }
+      }
+    },
+    "Made with Ostinato": {},
+    "Manual entry": {},
+    "Measure": {},
+    "Metronome": {},
+    "Microphone access is off": {},
+    "Minimize": {},
+    "Minutes": {},
+    "Minutes a day": {},
+    "Minutes per day": {},
+    "Minutes per day and per item, with notes. Good for your teacher.": {},
+    "Minutes per month": {},
+    "Minutes per week": {},
+    "Minutes practiced": {},
+    "My instrument": {},
+    "Name": {},
+    "Name (e.g. DADGAD)": {},
+    "Never": {},
+    "New Item": {},
+    "New item": {},
+    "New tag": {},
+    "New tuning": {},
+    "Next": {},
+    "Next Practice Item": {},
+    "No account needed. Your data stays on your devices and your own iCloud.": {},
+    "No accounts. No tracking. Your data stays on your devices and your iCloud.": {},
+    "No instrument": {},
+    "No practice logged this month yet.": {},
+    "No practice logged this week yet.": {},
+    "No practice logged today yet.": {},
+    "No practice session is running.": {},
+    "No recordings on this device yet.": {},
+    "No repertoire yet": {},
+    "No session running": {},
+    "No sessions yet": {},
+    "No stats yet": {},
+    "No tempos logged yet. Save one from the metronome or tap Log Tempo.": {},
+    "No tuner for %@": {},
+    "None": {},
+    "Not set": {},
+    "Note": {},
+    "Notes": {},
+    "Notes, lowest first (e.g. D2 A2 D3 G3 A3 D4)": {},
+    "Nothing in this range": {},
+    "Notifications are off for Ostinato. Turn them on in Settings to get reminders.": {},
+    "Now practicing %@.": {},
+    "OK": {},
+    "Octave %lld": {},
+    "Off. Your data stays on this device.": {},
+    "On this device": {},
+    "One gentle reminder a day, skipped once you've reached your goal.": {},
+    "One row per item practiced. Opens in any spreadsheet.": {},
+    "Opens the running session": {},
+    "Past sessions keep their time, but it won't be linked to this item anymore. Tempo history is deleted.": {},
+    "Pause": {},
+    "Pause Practice": {},
+    "Pause or Resume Practice": {},
+    "Paused": {},
+    "Pick a pitched instrument to tune.": {},
+    "Pick one or more. You can add your own later.": {},
+    "Pick one passage and give it ten minutes.": {},
+    "Pieces, exercises, composers": {},
+    "Play": {},
+    "Play a note": {},
+    "Plays the recording": {},
+    "Position": {},
+    "Practice": {},
+    "Practice Item": {},
+    "Practice Summary": {},
+    "Practice This": {},
+    "Practice a few sessions to see trends here.": {},
+    "Practice days": {},
+    "Practice log (CSV)": {},
+    "Practice report": {},
+    "Practice started.": {},
+    "Practiced on %lld days in the last %lld weeks": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practiced on %#@days@ in the last %2$lld weeks"
+          },
+          "substitutions": {
+            "days": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Practicing": {},
+    "Privacy Policy": {},
+    "Quarter": {},
+    "Range": {},
+    "Rating": {},
+    "Rating and focus": {},
+    "Record": {},
+    "Recording": {},
+    "Recording stopped due to an interruption. It was saved.": {},
+    "Recordings": {},
+    "Recordings (ZIP)": {},
+    "Remind me to practice": {},
+    "Reminder": {},
+    "Removes every session, item, instrument and recording from this device and your iCloud.": {},
+    "Rename": {},
+    "Rename recording": {},
+    "Repertoire": {},
+    "Rest days are built in. Missing a day within your weekly goal won't break your streak.": {},
+    "Rest days keep the streak": {},
+    "Restore": {},
+    "Resume": {},
+    "Resume Practice": {},
+    "Save": {},
+    "Save %lld BPM to %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Save %1$lld BPM to %2$@"
+          }
+        }
+      }
+    },
+    "Saved to %@": {},
+    "See time spent, tempo progress and recordings.": {},
+    "Selected": {},
+    "Session": {},
+    "Session in progress": {},
+    "Set a goal": {},
+    "Set a target tempo": {},
+    "Settings": {},
+    "Share": {},
+    "Sharp": {},
+    "Short sessions count too.": {},
+    "Show Archived": {},
+    "Show as List": {},
+    "Show concert pitch": {},
+    "Sign in to iCloud in the Settings app to sync between your devices. Ostinato works fully offline.": {},
+    "Siri or Shortcuts": {},
+    "Skip": {},
+    "Slower by %lld": {},
+    "Sound": {},
+    "Source": {},
+    "Speed": {},
+    "Start": {},
+    "Start Practice": {},
+    "Start Practicing": {},
+    "Start a session from the Practice tab.": {},
+    "Start a session to begin a streak.": {},
+    "Started": {},
+    "Started %@. %@ so far.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Started %1$@. %2$@ so far."
+          }
+        }
+      }
+    },
+    "Starts a session on this item": {},
+    "Starts timing a practice session.": {},
+    "Stats": {},
+    "Status": {},
+    "Still practicing?": {},
+    "Stop": {},
+    "Stored on another device": {},
+    "Streak": {},
+    "String by string": {},
+    "Subdivision": {},
+    "Summary · generated on device": {},
+    "Switch Item": {},
+    "Switch Practice Item": {},
+    "Switches the running session to another piece or exercise.": {},
+    "Sync recordings to iCloud": {},
+    "Sync status: %@": {},
+    "Sync with iCloud": {},
+    "Syncing…": {},
+    "Tags": {},
+    "Tap": {},
+    "Tap Record during a session to hear how it sounds.": {},
+    "Tap repeatedly in time to set the tempo": {},
+    "Target": {},
+    "Target %lld BPM": {},
+    "Target tempo": {},
+    "Tells you how much you practiced.": {},
+    "Tempo": {},
+    "Tempo history": {},
+    "The audio file is removed from all your devices.": {},
+    "The file may still be downloading. Try again in a moment.": {},
+    "The session keeps running": {},
+    "The time from this session won't be saved.": {},
+    "The time from this session won't be saved. Recordings are kept.": {},
+    "This Month": {},
+    "This Week": {},
+    "This can't be undone. Export a backup first if you might want it later.": {},
+    "This change applies after you finish the current session.": {},
+    "This file couldn't be imported.": {},
+    "This month": {},
+    "This week": {},
+    "Time": {},
+    "Time Range": {},
+    "Time on this item": {},
+    "Time per item": {},
+    "Time signature": {},
+    "Time to practice": {},
+    "Title": {},
+    "To record, allow microphone access for Ostinato in Settings.": {},
+    "To tune, allow microphone access for Ostinato in Settings. Audio is analyzed live and never stored.": {},
+    "Today": {},
+    "Tools": {},
+    "Top items": {},
+    "Total": {},
+    "Total %lld %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Total %1$lld %2$@"
+          }
+        }
+      }
+    },
+    "Total %lld min": {},
+    "Total time": {},
+    "Total: %@ on %lld days": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total: %1$@ on %#@days@"
+          },
+          "substitutions": {
+            "days": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Transposition": {},
+    "Tuner": {},
+    "Tuning": {},
+    "Tuning reference": {},
+    "Tunings": {},
+    "Two sessions are running": {},
+    "Up to %lld rest days a week won't break your streak.": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Up to %lld rest day a week won't break your streak."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Up to %lld rest days a week won't break your streak."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Up to date": {},
+    "Use note names with octave numbers. Middle C is C4. Write the notes at concert pitch.": {},
+    "Used by the tuner and drone to show written notes. B♭ clarinet is −2, alto sax is −9, F horn is −7.": {},
+    "Uses your own iCloud. We never see your data. Turning sync off keeps everything on this device.": {},
+    "Version": {},
+    "Voicing": {},
+    "Volume": {},
+    "Week": {},
+    "Weekly average, 1–5": {},
+    "Weekly goal": {},
+    "Weekly report (PDF)": {},
+    "What did you notice?": {},
+    "What do you play?": {},
+    "What worked, what to try next time": {},
+    "What you worked on": {},
+    "Working on": {},
+    "You practiced %@ this month.": {},
+    "You practiced %@ this week.": {},
+    "You practiced %@ today.": {},
+    "Your Data": {},
+    "Your data": {},
+    "Your iPhone started a separate session. Combine them, or keep the one that started first?": {},
+    "Your instrument is ready when you are.": {},
+    "Your session has been running for 4 hours. Open Ostinato to finish or keep going.": {},
+    "Your tunings": {},
+    "Your watch started a separate session. Combine them, or keep the one that started first?": {},
+    "days ≥ %lld min": {},
+    "iCloud": {},
+    "iCloud storage full. New changes stay on this device.": {},
+    "iCloud unavailable right now. Changes will sync later.": {},
+    "iCloud unavailable. You're signed out.": {},
+    "iPhone": {},
+    "min": {},
+    "minutes": {},
+    "practice": {},
+    "• %@": {}
+  },
+  "version": "1.0"
+}

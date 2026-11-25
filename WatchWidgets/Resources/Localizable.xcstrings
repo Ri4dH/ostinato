@@ -1,0 +1,47 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "%lld min today" : {
+
+    },
+    "%lld min · 🔥 %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld min · 🔥 %2$lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld min" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld min"
+          }
+        }
+      }
+    },
+    "Practice" : {
+
+    },
+    "Practicing" : {
+
+    },
+    "Today's minutes and streak." : {
+
+    },
+    "min" : {
+
+    },
+    "🔥 %lld-day streak" : {
+
+    }
+  },
+  "version" : "1.0"
+}

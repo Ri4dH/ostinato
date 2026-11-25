@@ -297,6 +297,10 @@ final class AppModel {
             DemoData.seed(into: context)
             settings.lastInstrumentID = (try? context.fetch(FetchDescriptor<Instrument>(sortBy: [SortDescriptor(\.sortIndex)])))?.first?.id
             if DemoScreen.has("-demoSession") { DemoScreen.startSession(in: self) }
+            if DemoScreen.has("-demoReport") {
+                let url = URL.documentsDirectory.appending(path: "demo-report.pdf")
+                _ = PracticeReportRenderer.renderPDF(context: context, goal: settings.goal, period: .last30Days, to: url)
+            }
         } else if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") {
             settings.hasOnboarded = true
             let violin = Instrument(preset: InstrumentPreset.preset(forKey: "violin")!)

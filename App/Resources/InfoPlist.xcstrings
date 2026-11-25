@@ -1,0 +1,18 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "NSMicrophoneUsageDescription": {
+      "comment": "Microphone permission prompt",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Used to record your practice and, if you choose, analyze tempo. Recordings never leave your devices except through your own iCloud."
+          }
+        }
+      }
+    }
+  }
+}

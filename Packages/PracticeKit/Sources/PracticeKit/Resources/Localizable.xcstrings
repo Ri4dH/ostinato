@@ -1,7 +1,170 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ major": {},
+    "%@ minor": {},
+    "%@ of practice this week": {},
+    "A focused week on %@": {},
+    "A short session still counts. Try 10 minutes today.": {},
+    "About the same as last week.": {},
+    "Accordion": {},
+    "Acoustic Guitar": {},
+    "Add %lld more short sessions to reach your weekly goal.": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Add %lld more short session to reach your weekly goal."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Add %lld more short sessions to reach your weekly goal."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "All": {},
+    "Alto Sax": {},
+    "Aqua": {},
+    "Archived": {},
+    "Average focus was %@ out of 5.": {},
+    "Banjo": {},
+    "Baritone Sax": {},
+    "Bass Clarinet": {},
+    "Bass Guitar": {},
+    "Bassoon": {},
+    "Blue": {},
+    "Brass": {},
+    "Brown": {},
+    "Cello": {},
+    "Clarinet in B♭": {},
+    "Classical Guitar": {},
+    "Composition": {},
+    "Conducting": {},
+    "Cornet": {},
+    "Double Bass": {},
+    "Down %lld%% on last week.": {},
+    "Drum Kit": {},
+    "Ear Training": {},
+    "Eighths": {},
+    "Electric Guitar": {},
+    "Euphonium": {},
+    "Exercise": {},
+    "Flute": {},
+    "French Horn in F": {},
+    "General practice": {},
+    "Goal met: %lld practice days": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Goal met: %lld practice day"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "Goal met: %lld practice days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Graphite": {},
+    "Green": {},
+    "Guitar family": {},
+    "Hand Percussion": {},
+    "Harp": {},
+    "Harpsichord": {},
+    "Improvisation": {},
+    "Keep the same rhythm next week.": {},
+    "Keyboard": {},
+    "Keyboard/Synth": {},
+    "Learning": {},
+    "Magenta": {},
+    "Maintaining": {},
+    "Mallets/Marimba": {},
+    "Mandolin": {},
+    "Month": {},
+    "Most time went to %@ (%lld min).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Most time went to %1$@ (%2$lld min)."
+          }
+        }
+      }
+    },
+    "Music Theory": {},
+    "No clear tempo or key": {},
+    "No microphone is available.": {},
+    "No practice logged this week": {},
+    "None": {},
+    "Oboe": {},
+    "Orange": {},
+    "Organ": {},
+    "Other": {},
+    "Percussion": {},
+    "Performance-ready": {},
+    "Piano": {},
+    "Piccolo": {},
+    "Piece": {},
+    "Pink": {},
+    "Polishing": {},
+    "Pure": {},
+    "Recorder": {},
+    "Recording couldn't start.": {},
+    "Red": {},
+    "Root": {},
+    "Root + 5th": {},
+    "Root + 5th + octave": {},
+    "Scales": {},
+    "Scales and technique were %lld%% of your time. A 10-minute warm-up could help.": {},
+    "Sight-reading": {},
+    "Sixteenths": {},
+    "Snare": {},
+    "Soprano Sax": {},
+    "Strings": {},
+    "Teal": {},
+    "Technique": {},
+    "Tenor Sax": {},
+    "This backup was made by a newer version of Ostinato. Update the app and try again.": {},
+    "This file isn't an Ostinato backup.": {},
+    "Timpani": {},
+    "Triplets": {},
+    "Trombone": {},
+    "Trumpet in B♭": {},
+    "Tuba": {},
+    "Ukulele": {},
+    "Up %lld%% on last week.": {},
+    "Viola": {},
+    "Violet": {},
+    "Violin": {},
+    "Voice": {},
+    "Voice / Singing": {},
+    "Week": {},
+    "Woodwinds": {},
+    "Year": {},
+    "Yellow": {},
+    "drifting": {},
+    "mostly steady": {},
+    "steady": {},
+    "tempo %@": {},
+    "≈ %lld BPM": {}
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

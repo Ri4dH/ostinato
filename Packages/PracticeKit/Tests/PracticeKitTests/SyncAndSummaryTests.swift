@@ -119,3 +119,21 @@ struct WeeklySummaryTests {
         #expect(!summary.suggestion.isEmpty)
     }
 }
+
+/// String catalogs are compiled by Xcode builds only; `swift test` on the
+/// command line copies the raw .xcstrings, so plural rules can't apply there.
+private var catalogIsCompiled: Bool {
+    let bundle = PracticeKitResources.bundle
+    return (try? FileManager.default.subpathsOfDirectory(atPath: bundle.bundlePath))?
+        .contains { $0.hasSuffix(".stringsdict") } ?? false
+}
+
+@Suite("Localized plurals", .enabled(if: catalogIsCompiled, "Run through Xcode (compiled string catalog)"))
+struct PluralTests {
+    @Test func summarySuggestionUsesSingular() {
+        let input = WeeklySummaryInput(weekStart: Date(), totalMinutes: 30, previousWeekMinutes: 0, daysPracticed: 2,
+                                       goalDaysPerWeek: 3, goalDailyMinutes: 20, streak: 2, topItems: [],
+                                       categoryShares: [:], averageRating: nil, averageFocus: nil, notes: [])
+        #expect(RulesBasedSummary.make(input).suggestion == "Add 1 more short session to reach your weekly goal.")
+    }
+}

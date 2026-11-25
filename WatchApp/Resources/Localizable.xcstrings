@@ -1,1 +1,103 @@
-{"sourceLanguage":"en","strings":{},"version":"1.0"}
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "%lld min" : {
+
+    },
+    "%lld minutes on this item" : {
+
+    },
+    "%lld of 5" : {
+
+    },
+    "%lld waiting for iPhone" : {
+
+    },
+    "%lld-day streak" : {
+
+    },
+    "Discard" : {
+
+    },
+    "Discard this session?" : {
+
+    },
+    "Finish" : {
+
+    },
+    "General practice" : {
+
+    },
+    "How did it go?" : {
+
+    },
+    "Instrument" : {
+
+    },
+    "Interval taps" : {
+
+    },
+    "Keep Practicing" : {
+
+    },
+    "Next Item" : {
+
+    },
+    "Not set" : {
+
+    },
+    "Off" : {
+
+    },
+    "Ostinato" : {
+
+    },
+    "Pause" : {
+
+    },
+    "Practice" : {
+
+    },
+    "Rating" : {
+
+    },
+    "Resume" : {
+
+    },
+    "Save" : {
+
+    },
+    "Start" : {
+
+    },
+    "Switch to" : {
+
+    },
+    "Tap every" : {
+
+    },
+    "Time to switch?" : {
+
+    },
+    "Today: %lld of %lld minutes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Today: %1$lld of %2$lld minutes"
+          }
+        }
+      }
+    },
+    "Total time" : {
+
+    },
+    "min" : {
+
+    }
+  },
+  "version" : "1.0"
+}
