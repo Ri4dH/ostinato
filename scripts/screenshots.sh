@@ -1,13 +1,14 @@
 #!/bin/zsh
 # Captures App Store screenshots with UITests/ScreenshotTests.swift.
 # Usage: scripts/screenshots.sh [output-dir] [device names...]
-# Default devices: iPhone 17 Pro Max (6.9"), iPad Pro 13-inch (M5), Apple Watch Ultra 3.
+# Default devices: iPhone 17 Pro (6.3", the size App Store Connect asks for), iPhone 17 Pro Max (6.9"),
+# iPad Pro 13-inch (M5) and Apple Watch Ultra 3.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT=${1:-docs/app-store/screenshots}
 (( $# )) && shift
 DEVICES=("$@")
-(( ${#DEVICES[@]} )) || DEVICES=("iPhone 17 Pro Max" "iPad Pro 13-inch (M5)" "Apple Watch Ultra 3 (49mm)")
+(( ${#DEVICES[@]} )) || DEVICES=("iPhone 17 Pro" "iPhone 17 Pro Max" "iPad Pro 13-inch (M5)" "Apple Watch Ultra 3 (49mm)")
 DERIVED=${DERIVED_DATA:-build/screenshots-derived-data}
 
 udid_for() { # newest iOS runtime that has this device name
