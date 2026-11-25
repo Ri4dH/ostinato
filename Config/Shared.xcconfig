@@ -1,14 +1,14 @@
 // Ostinato build configuration. The bundle prefix is defined ONLY here.
-// Replace `com.example` with your reverse-DNS developer prefix
+// Change OSTINATO_BUNDLE_PREFIX to your reverse-DNS developer prefix
 // (e.g. com.yourname) and set DEVELOPMENT_TEAM to sign for devices.
 
-OSTINATO_BUNDLE_PREFIX = com.example
+OSTINATO_BUNDLE_PREFIX = com.riad
 OSTINATO_BUNDLE_ID = $(OSTINATO_BUNDLE_PREFIX).ostinato
 OSTINATO_APP_GROUP = group.$(OSTINATO_BUNDLE_ID)
 OSTINATO_ICLOUD_CONTAINER = iCloud.$(OSTINATO_BUNDLE_ID)
 OSTINATO_DISPLAY_NAME = Ostinato
 
-DEVELOPMENT_TEAM =
+DEVELOPMENT_TEAM = YAFG76M77W
 
 // CloudKit push environment: development for Debug, production for Release.
 OSTINATO_APS_ENVIRONMENT = development

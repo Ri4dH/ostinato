@@ -738,28 +738,28 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					16EE4D24B01DD8C51A5FF14B = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 					};
 					2A8ECC4BE16E1C6348D16A52 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 					};
 					D4772DD86D4C6B134D1DEDF2 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E728BDAEFE7FCF150AA8C7CB;
 					};
 					E728BDAEFE7FCF150AA8C7CB = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 					};
 					EFEBE3D5CBF6BF527FA7C766 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 					};
 					F1C39E542E47B3695FB5052A = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = YAFG76M77W;
 						ProvisioningStyle = Automatic;
 						TestTargetID = EFEBE3D5CBF6BF527FA7C766;
 					};
