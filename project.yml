@@ -35,7 +35,7 @@ targets:
         com.apple.developer.icloud-container-identifiers: ["$(OSTINATO_ICLOUD_CONTAINER)"]
         com.apple.developer.ubiquity-container-identifiers: ["$(OSTINATO_ICLOUD_CONTAINER)"]
         com.apple.developer.icloud-services: [CloudKit, CloudDocuments]
-        aps-environment: development
+        aps-environment: $(OSTINATO_APS_ENVIRONMENT)
     info:
       path: App/Info.plist
       properties:

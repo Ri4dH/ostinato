@@ -2,6 +2,19 @@ import Foundation
 import PracticeKit
 import SwiftData
 
+/// Test and screenshot launch arguments. Always off in Release builds, so
+/// none of this can be triggered in the App Store app.
+enum LaunchFlags {
+    static var isUITesting: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.arguments.contains("-uiTesting")
+        #else
+        false
+        #endif
+    }
+}
+
+#if DEBUG
 /// Realistic sample data for UI tests, accessibility audits and App Store
 /// screenshots. Only used with the `-demoData` launch argument.
 @MainActor
@@ -80,9 +93,18 @@ struct SeededGenerator: RandomNumberGenerator {
     }
 }
 
-/// Launch arguments for App Store screenshots. Only honoured with `-demoData`.
+#endif
+
+/// Launch arguments for App Store screenshots. Only honoured with `-demoData`
+/// in Debug builds.
 enum DemoScreen {
-    static var isEnabled: Bool { ProcessInfo.processInfo.arguments.contains("-demoData") }
+    static var isEnabled: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.arguments.contains("-demoData")
+        #else
+        false
+        #endif
+    }
 
     static func value(_ flag: String) -> String? {
         let args = ProcessInfo.processInfo.arguments
@@ -102,6 +124,7 @@ enum DemoScreen {
         }
     }
 
+    #if DEBUG
     /// A session that has been running for a while, across three items.
     @MainActor
     static func startSession(in model: AppModel) {
@@ -121,4 +144,5 @@ enum DemoScreen {
         model.sessionController.applyRemote(session)
         model.isShowingActiveSession = true
     }
+    #endif
 }

@@ -27,6 +27,7 @@ final class WatchModel {
     @ObservationIgnored private let directory = AppIdentifiers.current.sharedDirectory
 
     private init() {
+        #if DEBUG
         if WatchDemo.isEnabled {
             controller = SessionController(store: InMemoryActiveSessionStore(WatchDemo.wantsSession ? WatchDemo.session() : nil))
             context = WatchDemo.context()
@@ -36,6 +37,11 @@ final class WatchModel {
             context = Self.load(PhoneContext.self, "phone-context.json") ?? .empty
             outbox = Self.load(WatchOutbox.self, "outbox.json") ?? WatchOutbox()
         }
+        #else
+        controller = SessionController(store: FileActiveSessionStore(directory: AppIdentifiers.current.sharedDirectory))
+        context = Self.load(PhoneContext.self, "phone-context.json") ?? .empty
+        outbox = Self.load(WatchOutbox.self, "outbox.json") ?? WatchOutbox()
+        #endif
         intervalHapticMinutes = UserDefaults.standard.integer(forKey: "intervalHapticMinutes")
         connector = WatchConnector()
         connector.model = self

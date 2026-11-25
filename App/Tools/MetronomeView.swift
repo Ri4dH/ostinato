@@ -53,7 +53,7 @@ struct MetronomeView: View {
                     .buttonStyle(.glassProminent)
 
                     Button {
-                        if let bpm = tapper.tap(at: ProcessInfo.processInfo.systemUptime) { engine.settings.bpm = bpm }
+                        if let bpm = tapper.tap(at: Date.now.timeIntervalSinceReferenceDate) { engine.settings.bpm = bpm }
                     } label: {
                         Text("Tap").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 60)
                     }

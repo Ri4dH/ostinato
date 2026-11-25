@@ -50,7 +50,7 @@ final class AppModel {
         snapshotStore = WidgetSnapshotStore(directory: identifiers.sharedDirectory)
         recordingFiles = RecordingFiles(identifiers: identifiers)
         analysis = RecordingAnalysisService(files: recordingFiles)
-        let isUITesting = ProcessInfo.processInfo.arguments.contains("-uiTesting")
+        let isUITesting = LaunchFlags.isUITesting
         statsStore = StatsRecordStore(
             cacheURL: isUITesting ? nil : identifiers.sharedDirectory.appending(path: "stats-records.json"),
             loadInBackground: true)
@@ -59,7 +59,9 @@ final class AppModel {
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
         isSyncing = wantsSync
 
-        if ProcessInfo.processInfo.arguments.contains("-uiTesting") { configureForUITests() }
+        #if DEBUG
+        if LaunchFlags.isUITesting { configureForUITests() }
+        #endif
 
         restoredSessionPrompt = DemoScreen.isEnabled ? nil : sessionController.active
         sessionController.addObserver { [weak self] event in self?.handle(event) }
@@ -80,7 +82,7 @@ final class AppModel {
     // MARK: Lifecycle
 
     func didLaunch() {
-        if !statsStore.hasCache || ProcessInfo.processInfo.arguments.contains("-uiTesting") {
+        if !statsStore.hasCache || LaunchFlags.isUITesting {
             statsStore.rebuild(from: container)
         }
         observeRemoteChanges()
@@ -125,7 +127,7 @@ final class AppModel {
     /// Checks iCloud sign-in off the main thread (it can take seconds) and
     /// switches the store only if the state changed since last launch.
     func refreshICloudStatus() async {
-        guard !ProcessInfo.processInfo.arguments.contains("-uiTesting") else { return }
+        guard !LaunchFlags.isUITesting else { return }
         let signedIn = await Task.detached(priority: .utility) {
             FileManager.default.ubiquityIdentityToken != nil
         }.value
@@ -288,6 +290,7 @@ final class AppModel {
 
     // MARK: UI testing
 
+    #if DEBUG
     private func configureForUITests() {
         container = try! PracticeStore.makeContainer(identifiers: identifiers, syncEnabled: false, inMemory: true)
         isSyncing = false
@@ -312,6 +315,7 @@ final class AppModel {
             settings.hasOnboarded = false
         }
     }
+    #endif
 }
 
 struct SessionConflict: Identifiable, Equatable {

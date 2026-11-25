@@ -2,8 +2,17 @@ import Foundation
 import PracticeKit
 
 /// Sample state for watch UI tests and App Store screenshots (`-demoData`).
+/// Debug builds only; always off in Release.
 enum WatchDemo {
-    static var isEnabled: Bool { ProcessInfo.processInfo.arguments.contains("-demoData") }
+    static var isEnabled: Bool {
+        #if DEBUG
+        ProcessInfo.processInfo.arguments.contains("-demoData")
+        #else
+        false
+        #endif
+    }
+
+    #if DEBUG
     static var wantsSession: Bool { ProcessInfo.processInfo.arguments.contains("-demoSession") }
 
     static let violin = InstrumentRef(id: UUID(), name: "Violin", colorHex: "#008300", symbolName: "music.quarternote.3")
@@ -31,4 +40,5 @@ enum WatchDemo {
         engine.switchTo(.item(items[1].id, title: items[1].title), in: &session)
         return session
     }
+    #endif
 }

@@ -9,6 +9,10 @@ OSTINATO_ICLOUD_CONTAINER = iCloud.$(OSTINATO_BUNDLE_ID)
 OSTINATO_DISPLAY_NAME = Ostinato
 
 DEVELOPMENT_TEAM =
+
+// CloudKit push environment: development for Debug, production for Release.
+OSTINATO_APS_ENVIRONMENT = development
+OSTINATO_APS_ENVIRONMENT[config=Release] = production
 MARKETING_VERSION = 1.0
 CURRENT_PROJECT_VERSION = 1
 
