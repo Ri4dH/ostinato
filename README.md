@@ -119,3 +119,8 @@ licenses: [MobileBuildMCP](https://github.com/getsentry/MobileBuildMCP),
 [SwiftUI Agent Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill),
 [Dimillian/Skills](https://github.com/Dimillian/Skills) and
 [writing-for-interfaces](https://github.com/andrewgleave/skills/tree/main/writing-for-interfaces).
+
+## License
+
+[MIT](LICENSE). The bundled agent skills in `.claude/skills` keep their own MIT
+licenses and copyright notices.
