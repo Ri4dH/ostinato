@@ -81,7 +81,7 @@ struct SettingsView: View {
                     LabeledContent("Version", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
                     Text("No accounts. No tracking. Your data stays on your devices and your iCloud.")
                         .foregroundStyle(.secondary)
-                    Link("Privacy Policy", destination: URL(string: "https://example.github.io/ostinato/privacy")!)
+                    Link("Privacy Policy", destination: URL(string: "https://ri4dh.github.io/ostinato/privacy/")!)
                 } header: {
                     Text("About")
                 }

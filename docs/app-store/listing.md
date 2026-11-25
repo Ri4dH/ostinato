@@ -6,6 +6,8 @@
 **Price:** Free. No in-app purchases.
 **Age rating:** 4+
 **Privacy label:** Data Not Collected
+**Privacy policy URL:** https://ri4dh.github.io/ostinato/privacy/
+**Support URL:** https://github.com/Ri4dH/ostinato/issues
 
 ## Keywords (100 characters, comma-separated, no spaces)
 
