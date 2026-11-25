@@ -18,12 +18,18 @@ final class WatchConnector: NSObject {
     func sendLive(_ message: WatchMessage) {
         guard let session, session.activationState == .activated, let payload = try? message.encoded() else { return }
         if session.isReachable {
-            session.sendMessage(payload, replyHandler: nil) { _ in
-                try? session.updateApplicationContext(payload)
+            // The error handler runs on a WatchConnectivity queue, not the main actor.
+            session.sendMessage(payload, replyHandler: nil) { @Sendable [weak self] _ in
+                Task { @MainActor in self?.sendAsContext(message) }
             }
         } else {
             try? session.updateApplicationContext(payload)
         }
+    }
+
+    private func sendAsContext(_ message: WatchMessage) {
+        guard let session, let payload = try? message.encoded() else { return }
+        try? session.updateApplicationContext(payload)
     }
 
     /// Finished sessions use guaranteed, queued delivery.

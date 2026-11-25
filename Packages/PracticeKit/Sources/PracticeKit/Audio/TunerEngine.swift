@@ -42,7 +42,9 @@ private final class PitchAnalyzer: @unchecked Sendable {
 @MainActor
 @Observable
 public final class TunerEngine {
-    public var a4: Double = NoteMath.defaultA4 { didSet { a4 = NoteMath.a4Range.clamp(a4) } }
+    /// Reference pitch. Clamped to 415–466 Hz where it's used: assigning a
+    /// property inside its own didSet recurses forever in an @Observable class.
+    public var a4: Double = NoteMath.defaultA4
     public var transposition: Int = 0
     public var showConcertPitch = false
 
@@ -70,7 +72,8 @@ public final class TunerEngine {
             let format = input.outputFormat(forBus: 0)
             guard format.sampleRate > 0 else { throw TunerError.noInput }
             let analyzer = PitchAnalyzer(sampleRate: format.sampleRate)
-            input.installTap(onBus: 0, bufferSize: 2_048, format: format) { [weak self] buffer, _ in
+            // Called on an audio thread: @Sendable keeps it off the main actor.
+            input.installTap(onBus: 0, bufferSize: 2_048, format: format) { @Sendable [weak self] buffer, _ in
                 guard let channel = buffer.floatChannelData?[0] else { return }
                 let estimates = analyzer.process(UnsafeBufferPointer(start: channel, count: Int(buffer.frameLength)))
                 guard !estimates.isEmpty else { return }
@@ -106,7 +109,7 @@ public final class TunerEngine {
         }
         silentFrames = 0
         let smoothed = smoother.add(estimate.frequency)
-        reading = NoteMath.reading(frequency: smoothed, a4: a4, transposition: transposition)
+        reading = NoteMath.reading(frequency: smoothed, a4: NoteMath.a4Range.clamp(a4), transposition: transposition)
     }
 
     enum TunerError: LocalizedError {

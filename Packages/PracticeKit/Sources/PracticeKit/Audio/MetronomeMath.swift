@@ -113,5 +113,5 @@ public struct TapTempo: Sendable {
 }
 
 extension ClosedRange where Bound: Comparable {
-    func clamp(_ value: Bound) -> Bound { Swift.min(Swift.max(value, lowerBound), upperBound) }
+    public func clamp(_ value: Bound) -> Bound { Swift.min(Swift.max(value, lowerBound), upperBound) }
 }

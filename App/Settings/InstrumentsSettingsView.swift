@@ -77,11 +77,23 @@ struct InstrumentsSettingsView: View {
 /// Grouped preset list. With `onPick`, tapping adds one; otherwise multi-select (onboarding).
 struct InstrumentPresetPicker: View {
     @Binding var selected: Set<String>
+    /// Optional hint shown as the first row, scrolling with the list.
+    var hint: LocalizedStringKey?
     var onPick: ((InstrumentPreset?) -> Void)?
     @State private var search = ""
 
     var body: some View {
         List {
+            if let hint {
+                Section {
+                    EmptyView()
+                } header: {
+                    Text(hint)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .textCase(nil)
+                }
+            }
             if onPick != nil {
                 Button { onPick?(nil) } label: { Label("Custom instrument", systemImage: "plus.circle") }
             }

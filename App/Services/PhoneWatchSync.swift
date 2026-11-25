@@ -61,7 +61,8 @@ final class PhoneWatchSync: NSObject {
         guard let session, session.activationState == .activated, session.isPaired, session.isWatchAppInstalled,
               let payload = try? message.encoded() else { return }
         if session.isReachable {
-            session.sendMessage(payload, replyHandler: nil) { _ in
+            // The error handler runs on a WatchConnectivity queue, not the main actor.
+            session.sendMessage(payload, replyHandler: nil) { @Sendable _ in
                 // Fall back to the latest-state context on failure.
                 Task { @MainActor in self.model.refreshDerivedState() }
             }

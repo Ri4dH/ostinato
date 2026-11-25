@@ -39,7 +39,8 @@ public final class DroneEngine {
         let state = DroneRenderState(sampleRate: rate)
         self.state = state
 
-        let source = AVAudioSourceNode(format: format) { isSilence, _, frameCount, bufferList -> OSStatus in
+        // Runs on the real-time render thread: @Sendable keeps it off the main actor.
+        let source = AVAudioSourceNode(format: format) { @Sendable isSilence, _, frameCount, bufferList -> OSStatus in
             if let next = state.pending.withLockIfAvailable({ value -> DroneSettings? in
                 defer { value = nil }
                 return value

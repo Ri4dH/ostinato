@@ -99,7 +99,7 @@ public final class RecordingPlayer {
         guard remaining > 0 else { return }
         let gen = generation
         player.scheduleSegment(file, startingFrame: frame, frameCount: remaining, at: nil,
-                               completionCallbackType: .dataPlayedBack) { [weak self] _ in
+                               completionCallbackType: .dataPlayedBack) { @Sendable [weak self] _ in
             Task { @MainActor in
                 guard let self, self.generation == gen else { return }
                 self.isPlaying = false

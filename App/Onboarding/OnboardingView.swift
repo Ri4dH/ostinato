@@ -42,15 +42,9 @@ struct OnboardingView: View {
     }
 
     private var instrumentsPage: some View {
-        InstrumentPresetPicker(selected: $selectedPresets)
+        InstrumentPresetPicker(selected: $selectedPresets, hint: "Pick one or more. You can add your own later.")
             .navigationTitle("What do you play?")
             .navigationBarTitleDisplayMode(.large)
-            .safeAreaInset(edge: .top) {
-                Text("Pick one or more. You can add your own later.")
-                    .font(.subheadline).foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
-            }
     }
 
     private var goalPage: some View {

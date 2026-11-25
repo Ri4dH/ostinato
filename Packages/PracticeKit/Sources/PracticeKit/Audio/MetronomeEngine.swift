@@ -111,7 +111,8 @@ public final class MetronomeEngine {
             for i in 0..<count { channel[start + i] += sound[i] }
         }
         let gen = generation
-        player.scheduleBuffer(buffer, completionCallbackType: .dataConsumed) { [weak self] _ in
+        // Called on an audio thread: @Sendable keeps it off the main actor.
+        player.scheduleBuffer(buffer, completionCallbackType: .dataConsumed) { @Sendable [weak self] _ in
             Task { @MainActor in
                 guard let self, self.isRunning, self.generation == gen else { return }
                 self.scheduleNextBar()
