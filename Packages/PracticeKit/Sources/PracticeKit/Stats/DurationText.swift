@@ -6,6 +6,9 @@ public enum DurationText {
     /// "1h 20m" / "45m". For compact labels and charts.
     public static func short(_ seconds: TimeInterval) -> String {
         let duration = Duration.seconds(max(0, seconds.rounded()))
+        if seconds <= 0 {
+            return Duration.seconds(0).formatted(.units(allowed: [.minutes], width: .abbreviated, zeroValueUnits: .show(length: 1)))
+        }
         if seconds < 60 {
             return duration.formatted(.units(allowed: [.seconds], width: .abbreviated))
         }

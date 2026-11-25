@@ -52,16 +52,16 @@ final class AppModel {
         analysis = RecordingAnalysisService(files: recordingFiles)
         let isUITesting = ProcessInfo.processInfo.arguments.contains("-uiTesting")
         statsStore = StatsRecordStore(
-            cacheURL: isUITesting ? nil : identifiers.sharedDirectory.appending(path: "stats-records.plist"),
+            cacheURL: isUITesting ? nil : identifiers.sharedDirectory.appending(path: "stats-records.json"),
             loadInBackground: true)
 
-        let wantsSync = settings.syncEnabled && FileManager.default.ubiquityIdentityToken != nil
+        let wantsSync = settings.syncEnabled && settings.iCloudSignedIn
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
         isSyncing = wantsSync
 
         if ProcessInfo.processInfo.arguments.contains("-uiTesting") { configureForUITests() }
 
-        restoredSessionPrompt = sessionController.active
+        restoredSessionPrompt = DemoScreen.isEnabled ? nil : sessionController.active
         sessionController.addObserver { [weak self] event in self?.handle(event) }
         audio.recorder.onFinish = { [weak self] result in self?.recordingFinished(result) }
         IntentRuntime.performer = self
@@ -84,9 +84,14 @@ final class AppModel {
             statsStore.rebuild(from: container)
         }
         observeRemoteChanges()
+        Task { await refreshICloudStatus() }
         watchSync.activate()
         liveActivity.adopt(sessionController.active)
-        refreshDerivedState()
+        // Wait for the stats cache (or rebuild) so widgets never get zeros.
+        Task {
+            await statsStore.waitForRebuild()
+            refreshDerivedState()
+        }
         recordingFiles.prune(olderThan: settings.recordingRetentionDays, in: context)
         Task {
             if isSyncing { await recordingFiles.resolveICloud(containerID: identifiers.cloudKitContainer) }
@@ -108,13 +113,25 @@ final class AppModel {
             return
         }
         pendingSyncChange = false
-        let wantsSync = settings.syncEnabled && FileManager.default.ubiquityIdentityToken != nil
+        let wantsSync = settings.syncEnabled && settings.iCloudSignedIn
         guard wantsSync != isSyncing else { return }
         try? context.save()
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
         isSyncing = wantsSync
         statsStore.rebuild(from: container)
         refreshDerivedState()
+    }
+
+    /// Checks iCloud sign-in off the main thread (it can take seconds) and
+    /// switches the store only if the state changed since last launch.
+    func refreshICloudStatus() async {
+        guard !ProcessInfo.processInfo.arguments.contains("-uiTesting") else { return }
+        let signedIn = await Task.detached(priority: .utility) {
+            FileManager.default.ubiquityIdentityToken != nil
+        }.value
+        guard signedIn != settings.iCloudSignedIn else { return }
+        settings.iCloudSignedIn = signedIn
+        applySyncSetting()
     }
 
     /// iCloud imports change the store behind our back: rebuild the stats cache.
@@ -279,6 +296,7 @@ final class AppModel {
             settings.hasOnboarded = true
             DemoData.seed(into: context)
             settings.lastInstrumentID = (try? context.fetch(FetchDescriptor<Instrument>(sortBy: [SortDescriptor(\.sortIndex)])))?.first?.id
+            if DemoScreen.has("-demoSession") { DemoScreen.startSession(in: self) }
         } else if ProcessInfo.processInfo.arguments.contains("-skipOnboarding") {
             settings.hasOnboarded = true
             let violin = Instrument(preset: InstrumentPreset.preset(forKey: "violin")!)

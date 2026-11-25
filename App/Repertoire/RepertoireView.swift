@@ -87,6 +87,11 @@ struct RepertoireView: View {
         .sheet(item: $editing) { target in
             ItemEditorView(item: target.item)
         }
+        .task {
+            if DemoScreen.has("-demoItem"), selection == nil {
+                selection = items.first { $0.title.contains("Chaconne") }?.id
+            }
+        }
     }
 
     private var filterMenu: some View {

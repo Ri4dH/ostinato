@@ -88,7 +88,8 @@ struct SettingsView: View {
             }
             .navigationTitle("Settings")
             .task {
-                sync.start(syncEnabled: settings.syncEnabled)
+                await model.refreshICloudStatus()
+                sync.start(syncEnabled: settings.syncEnabled, signedIn: settings.iCloudSignedIn)
                 storage = model.recordingFiles.bytesUsed()
             }
             .onChange(of: settings.goal) { model.refreshDerivedState() }
@@ -134,7 +135,7 @@ struct SettingsView: View {
         }
         .onChange(of: settings.syncEnabled) { _, enabled in
             model.applySyncSetting()
-            sync.start(syncEnabled: enabled)
+            sync.start(syncEnabled: enabled, signedIn: settings.iCloudSignedIn)
             Task { await model.recordingFiles.applySync(enabled: enabled && settings.syncRecordings, in: model.context) }
         }
         .onChange(of: settings.syncRecordings) { _, enabled in

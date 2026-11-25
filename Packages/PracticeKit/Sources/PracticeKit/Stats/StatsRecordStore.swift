@@ -26,6 +26,7 @@ public final class StatsRecordStore {
 
     @ObservationIgnored private let cacheURL: URL?
     @ObservationIgnored private var rebuildTask: Task<Void, Never>?
+    @ObservationIgnored private var writeTask: Task<Void, Never>?
 
     /// Reads the cache synchronously (tests, small caches).
     public init(cacheURL: URL?) {
@@ -95,11 +96,17 @@ public final class StatsRecordStore {
 
     public func waitForRebuild() async { await rebuildTask?.value }
 
+    /// Waits until the cache file reflects the latest change.
+    public func waitForWrites() async { await writeTask?.value }
+
     private func changed() {
         revision += 1
         guard let cacheURL else { return }
         let snapshot = Cache(version: Cache.currentVersion, records: records)
-        Task.detached(priority: .utility) {
+        // Chain writes so an older snapshot can never land after a newer one.
+        let previous = writeTask
+        writeTask = Task.detached(priority: .utility) {
+            await previous?.value
             guard let data = try? Self.encoder.encode(snapshot) else { return }
             try? FileManager.default.createDirectory(at: cacheURL.deletingLastPathComponent(), withIntermediateDirectories: true)
             try? data.write(to: cacheURL, options: .atomic)
@@ -107,16 +114,11 @@ public final class StatsRecordStore {
     }
 
     struct Cache: Codable, Sendable {
-        static let currentVersion = 1
+        static let currentVersion = 2
         var version: Int
         var records: [SessionRecord]
     }
 
-    nonisolated static let encoder: PropertyListEncoder = {
-        let e = PropertyListEncoder()
-        e.outputFormat = .binary
-        return e
-    }()
-
-    nonisolated static let decoder = PropertyListDecoder()
+    nonisolated static let encoder = JSONEncoder()
+    nonisolated static let decoder = JSONDecoder()
 }

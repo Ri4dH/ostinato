@@ -25,6 +25,9 @@ final class AppSettings {
     /// Auto-delete recordings older than this many days; 0 = never.
     var recordingRetentionDays: Int { didSet { defaults.set(recordingRetentionDays, forKey: Key.retention) } }
     var customTunings: [CustomTuning] { didSet { save(customTunings, Key.tunings) } }
+    /// Last known iCloud sign-in state. Checking it can block for seconds, so
+    /// launch uses this and the real value is refreshed in the background.
+    var iCloudSignedIn: Bool { didSet { defaults.set(iCloudSignedIn, forKey: Key.iCloud) } }
 
     init(defaults: UserDefaults) {
         self.defaults = defaults
@@ -46,6 +49,7 @@ final class AppSettings {
         drone = Self.load(DroneSettings.self, Key.drone, defaults) ?? DroneSettings()
         recordingRetentionDays = defaults.integer(forKey: Key.retention)
         customTunings = Self.load([CustomTuning].self, Key.tunings, defaults) ?? []
+        iCloudSignedIn = defaults.bool(forKey: Key.iCloud)
     }
 
     var reminderDateComponents: DateComponents {
@@ -79,6 +83,7 @@ final class AppSettings {
         static let drone = "drone"
         static let retention = "recordingRetentionDays"
         static let tunings = "customTunings"
+        static let iCloud = "iCloudSignedIn"
         static let all = [onboarded, sync, syncRecordings, awake, a4, concert, reminder, reminderTime,
                           lastInstrument, goal, metronome, drone, retention, tunings]
     }

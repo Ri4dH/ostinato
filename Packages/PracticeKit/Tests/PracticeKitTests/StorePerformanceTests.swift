@@ -57,12 +57,12 @@ struct StorePerformanceTests {
         // The full store read is slow (SwiftData materializes 60k objects), which
         // is why it only ever runs on a background actor. The cache the UI reads
         // must be fast.
-        let cacheURL = dir.appending(path: "records.plist")
+        let cacheURL = dir.appending(path: "records.json")
         let store = StatsRecordStore(cacheURL: cacheURL)
         store.rebuild(from: container)
         await store.waitForRebuild()
         #expect(store.records.count == 10_000)
-        try await Task.sleep(for: .milliseconds(500))   // cache write is detached
+        await store.waitForWrites()
         var reopened: StatsRecordStore?
         let cacheTime = clock.measure { reopened = StatsRecordStore(cacheURL: cacheURL) }
         print("PERF store load \(loadTime), cache load \(cacheTime)")
@@ -86,7 +86,7 @@ struct StatsRecordStoreTests {
     @Test func upsertRemoveAndPersist() async throws {
         let container = try makeTestContainer()
         let context = container.mainContext
-        let url = tempDirectory().appending(path: "records.plist")
+        let url = tempDirectory().appending(path: "records.json")
         let store = StatsRecordStore(cacheURL: url)
         let clock = TestClock(date(2026, 3, 2))
         var s = clock.engine.start(instrument: nil, target: scales, source: .phone)
@@ -103,7 +103,7 @@ struct StatsRecordStoreTests {
         #expect(store.records.count == 1)
         #expect(store.records.first?.activeDuration == 900)
 
-        try await Task.sleep(for: .milliseconds(300))
+        await store.waitForWrites()
         #expect(StatsRecordStore(cacheURL: url).records.first?.activeDuration == 900)
 
         store.remove(sessionID: session.id)

@@ -48,6 +48,12 @@ struct ActiveSessionView: View {
         .bannerOverlay($model.banner)
         .sensoryFeedback(.selection, trigger: switchTrigger)
         .onAppear { UIApplication.shared.isIdleTimerDisabled = settings.keepScreenAwake }
+        .task {
+            // Screenshots: open the finish sheet once this screen is on screen.
+            guard DemoScreen.has("-demoFinish"), model.finishDraft == nil else { return }
+            try? await Task.sleep(for: .seconds(1))
+            model.beginFinish()
+        }
         .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }
     }
 

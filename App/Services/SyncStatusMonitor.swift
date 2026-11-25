@@ -14,9 +14,10 @@ final class SyncStatusMonitor {
     private(set) var status: Status = .off
     @ObservationIgnored private var observer: NSObjectProtocol?
 
-    var isSignedIn: Bool { FileManager.default.ubiquityIdentityToken != nil }
+    private(set) var isSignedIn = false
 
-    func start(syncEnabled: Bool) {
+    func start(syncEnabled: Bool, signedIn: Bool) {
+        isSignedIn = signedIn
         guard syncEnabled else { status = isSignedIn ? .off : .signedOut; return }
         guard isSignedIn else { status = .signedOut; return }
         status = .upToDate

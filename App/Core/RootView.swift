@@ -9,7 +9,7 @@ enum AppTab: Hashable {
 struct RootView: View {
     @Environment(AppModel.self) private var model
     @Environment(AppSettings.self) private var settings
-    @State private var selectedTab: AppTab = .practice
+    @State private var selectedTab: AppTab = DemoScreen.tab
 
     var body: some View {
         @Bindable var model = model

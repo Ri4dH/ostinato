@@ -157,3 +157,12 @@ struct StatsTests {
         #expect(DurationText.minutes(119) == 1)
     }
 }
+
+@Suite("Duration text")
+struct DurationTextTests {
+    @Test func zeroReadsAsMinutes() {
+        #expect(DurationText.short(0) == "0 min")
+        #expect(DurationText.short(45) == "45 sec")
+        #expect(DurationText.short(3_900) == "1 hr, 5 min")
+    }
+}

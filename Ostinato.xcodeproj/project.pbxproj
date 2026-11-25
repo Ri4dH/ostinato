@@ -21,6 +21,7 @@
 		1EA45106483E9522E6FE7412 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDE23D57ABD464D6B5EC97 /* SettingsView.swift */; };
 		2468C103AAE1AE9282177392 /* RecordingFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */; };
 		25B7B1C78F513A8C89E9EECD /* SyncStatusMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E3E14E3251F5EDF9EA338D /* SyncStatusMonitor.swift */; };
+		26B6C8A231292F8083D8BE61 /* WatchScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EECDCB536A8FD00B11C6A8 /* WatchScreenshotTests.swift */; };
 		2B1BC3EC34C528F13422EDD2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ACFFD7AC30CC10FFEDA00A /* ItemDetailView.swift */; };
 		2E7CDDBDF03BA5821729D2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E2DEAB4001DFC4F1B192F6 /* Assets.xcassets */; };
 		2F8A0B54B25604450ED3D24A /* LogIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A12ACB9655F2EFF8B4A46 /* LogIntents.swift */; };
@@ -51,6 +52,7 @@
 		87973CD56792840A379AE677 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6642D7E97794FED22D296 /* HistoryView.swift */; };
 		88DA54093EA0F85E06B343F6 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D63C022A09FD00593C2C66 /* StatsView.swift */; };
 		88F3F88AC520B03E5E198DCD /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5EB7D1ECCBD41FF0AC4D7 /* Components.swift */; };
+		895253EC0EACB1D21E2861C9 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA98D61B9F50522E5457C5F /* ScreenshotTests.swift */; };
 		8FD406F83A2DB6903E647934 /* SessionIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB840194D6C85A72D856749 /* SessionIntents.swift */; };
 		93552F493E7D1BA56353C275 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832776BC7C65DAF5C98CFDB /* AppModel.swift */; };
 		96EF8FF15E3ABE54E0263C1B /* PracticeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 49C599D59155C53797AC20B2 /* PracticeKit */; };
@@ -76,6 +78,7 @@
 		E19C32B96548C69C6703B449 /* OstinatoShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */; };
 		E487AC9E6F720DFAD2385E18 /* StatsCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCC79E8A86B90C009A693C /* StatsCharts.swift */; };
 		E57D3B198ABF1B0442B278A9 /* OstinatoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */; };
+		EE185618A1063E3595FAB241 /* WatchDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF8AABBFAFA0461A22E3D9 /* WatchDemo.swift */; };
 		F06318D3B45B48CE2703CAE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD3472F04824FF78CAD1F40 /* Assets.xcassets */; };
 		F18CF3DC66038935C49CA5F4 /* PracticeActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9250D1A8DF58E9E68DAB76 /* PracticeActivityAttributes.swift */; };
 		F68601D53AE3C2019D4F3B89 /* ManualLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27464A8DBA882F38AC58457 /* ManualLogView.swift */; };
@@ -91,6 +94,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2A8ECC4BE16E1C6348D16A52;
 			remoteInfo = OstinatoWidgets;
+		};
+		66C32DCC1E151BF0A4EA76AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0295B5099C9DC5EA316C5148 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFEBE3D5CBF6BF527FA7C766;
+			remoteInfo = OstinatoWatch;
 		};
 		6B29A1DCD9F9170000B3160A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -161,6 +171,7 @@
 		1E7F3A3404916F8843922CB8 /* ReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScheduler.swift; sourceTree = "<group>"; };
 		25D63C022A09FD00593C2C66 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		26BDE23D57ABD464D6B5EC97 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		26EECDCB536A8FD00B11C6A8 /* WatchScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScreenshotTests.swift; sourceTree = "<group>"; };
 		28EBFA92C26512C85FAA083A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		295C01B3E78F34DAF57A5283 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2CEC85CDDC2DA9CFB3E96C22 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -190,6 +201,7 @@
 		6A7A9DFC928610CA6ABBE993 /* WatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchModel.swift; sourceTree = "<group>"; };
 		6CDED74D9C28B70E1BCFDD39 /* PracticeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeHomeView.swift; sourceTree = "<group>"; };
 		77E22BF75194F034F79AA987 /* PracticeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeControl.swift; sourceTree = "<group>"; };
+		79CF8AABBFAFA0461A22E3D9 /* WatchDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDemo.swift; sourceTree = "<group>"; };
 		7D00A6E23E54F7FC3B232EB6 /* InstrumentsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsSettingsView.swift; sourceTree = "<group>"; };
 		81CCC79E8A86B90C009A693C /* StatsCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsCharts.swift; sourceTree = "<group>"; };
 		848EA486AE5BA832DC435394 /* PracticeLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeLiveActivity.swift; sourceTree = "<group>"; };
@@ -197,6 +209,7 @@
 		88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OstinatoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B15AEBF1DCB50402872745B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		8C459B8AA9F6F0B310183767 /* RecordingAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingAnalysisService.swift; sourceTree = "<group>"; };
+		8C625295309EA07B1A3E0103 /* OstinatoWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OstinatoWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BDCF030868E1C481BFDA02 /* OstinatoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoWidgetBundle.swift; sourceTree = "<group>"; };
 		97805B8E73DF90E2D1C183D1 /* PhoneWatchSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneWatchSync.swift; sourceTree = "<group>"; };
 		9B51DEFC461CA40839F97491 /* OstinatoShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OstinatoShortcuts.swift; sourceTree = "<group>"; };
@@ -226,6 +239,7 @@
 		E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OstinatoWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8118A86AAD7DCF090CADBDE /* RecordingFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingFiles.swift; sourceTree = "<group>"; };
 		E8A6C56DE36841E76B526BAC /* OstinatoWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OstinatoWatch.entitlements; sourceTree = "<group>"; };
+		EEA98D61B9F50522E5457C5F /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		F9DCCF3FA930F49E1DF3129F /* ActiveSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionView.swift; sourceTree = "<group>"; };
 		FCD3472F04824FF78CAD1F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,10 +291,19 @@
 				59FF1D7FD9E21DDEE7500627 /* Info.plist */,
 				E8A6C56DE36841E76B526BAC /* OstinatoWatch.entitlements */,
 				56D92724475520608AD132B1 /* WatchConnector.swift */,
+				79CF8AABBFAFA0461A22E3D9 /* WatchDemo.swift */,
 				6A7A9DFC928610CA6ABBE993 /* WatchModel.swift */,
 				622D33D43DF7765A5E7C23F8 /* WatchViews.swift */,
 			);
 			path = WatchApp;
+			sourceTree = "<group>";
+		};
+		0C5B9ABB845711A5635F39C8 /* WatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26EECDCB536A8FD00B11C6A8 /* WatchScreenshotTests.swift */,
+			);
+			path = WatchUITests;
 			sourceTree = "<group>";
 		};
 		108BC5E88066218CBBB67783 = {
@@ -292,6 +315,7 @@
 				B1719F16FF0362CE072F2BC8 /* Shared */,
 				D7ED924C5B6061788170E64C /* UITests */,
 				0B23D4933058FF845CFD03A1 /* WatchApp */,
+				0C5B9ABB845711A5635F39C8 /* WatchUITests */,
 				401C925A2FD1CD4C821A8355 /* WatchWidgets */,
 				A83027F6DF78223EFDDAAEB7 /* Widgets */,
 				A91653F0258C453FD36EE2CA /* Frameworks */,
@@ -315,6 +339,7 @@
 				174A2934BC4722B0E49D539B /* Ostinato.app */,
 				88E4D9D15CC191D0BBA6CBB3 /* OstinatoUITests.xctest */,
 				E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */,
+				8C625295309EA07B1A3E0103 /* OstinatoWatchUITests.xctest */,
 				D28A259632673F502792F109 /* OstinatoWatchWidgets.appex */,
 				37E3B76653615B2599A8D507 /* OstinatoWidgets.appex */,
 			);
@@ -528,6 +553,7 @@
 			children = (
 				59683FAC2F890761D431120D /* AccessibilityAuditTests.swift */,
 				0C7567C0277C4C932A293215 /* OstinatoUITests.swift */,
+				EEA98D61B9F50522E5457C5F /* ScreenshotTests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -675,6 +701,24 @@
 			productReference = E7B4AEDC3AC373C39548314C /* OstinatoWatch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1C39E542E47B3695FB5052A /* OstinatoWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BFAF5BDBC63CE1F1466116D /* Build configuration list for PBXNativeTarget "OstinatoWatchUITests" */;
+			buildPhases = (
+				F4216A9B2D26D73221F0D070 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D58A01E2396D9F02E4FAA6D1 /* PBXTargetDependency */,
+			);
+			name = OstinatoWatchUITests;
+			packageProductDependencies = (
+			);
+			productName = OstinatoWatchUITests;
+			productReference = 8C625295309EA07B1A3E0103 /* OstinatoWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -705,6 +749,11 @@
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
+					F1C39E542E47B3695FB5052A = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+						TestTargetID = EFEBE3D5CBF6BF527FA7C766;
+					};
 				};
 			};
 			buildConfigurationList = A8B0E0F51B5B5ABFC0B9084B /* Build configuration list for PBXProject "Ostinato" */;
@@ -729,6 +778,7 @@
 				EFEBE3D5CBF6BF527FA7C766 /* OstinatoWatch */,
 				16EE4D24B01DD8C51A5FF14B /* OstinatoWatchWidgets */,
 				D4772DD86D4C6B134D1DEDF2 /* OstinatoUITests */,
+				F1C39E542E47B3695FB5052A /* OstinatoWatchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -827,6 +877,7 @@
 			files = (
 				D246598B68D8F8934A92991F /* AccessibilityAuditTests.swift in Sources */,
 				C85DBA844F7D167469482AE3 /* OstinatoUITests.swift in Sources */,
+				895253EC0EACB1D21E2861C9 /* ScreenshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +894,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F468B10B5B793AD59F9C60 /* WatchConnector.swift in Sources */,
+				EE185618A1063E3595FAB241 /* WatchDemo.swift in Sources */,
 				9985EBE20FE80EC569F6F6E3 /* WatchModel.swift in Sources */,
 				BF2CE156DAD396BAAD807F2E /* WatchViews.swift in Sources */,
 			);
@@ -864,6 +916,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4216A9B2D26D73221F0D070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26B6C8A231292F8083D8BE61 /* WatchScreenshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -876,6 +936,11 @@
 			isa = PBXTargetDependency;
 			target = E728BDAEFE7FCF150AA8C7CB /* Ostinato */;
 			targetProxy = 79A01A737F9D37D1800F9AFE /* PBXContainerItemProxy */;
+		};
+		D58A01E2396D9F02E4FAA6D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFEBE3D5CBF6BF527FA7C766 /* OstinatoWatch */;
+			targetProxy = 66C32DCC1E151BF0A4EA76AC /* PBXContainerItemProxy */;
 		};
 		F6CD651CC4D8CEE5731D6E3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -981,6 +1046,24 @@
 			};
 			name = Debug;
 		};
+		2D22EF25715478B17AE05847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp.uitests";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = OstinatoWatch;
+			};
+			name = Release;
+		};
 		3B5CA0395123D87C36DAED3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1069,6 +1152,24 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88CC6C1C9132D66AE3265F8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(OSTINATO_BUNDLE_ID).watchkitapp.uitests";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = OstinatoWatch;
 			};
 			name = Debug;
 		};
@@ -1216,6 +1317,15 @@
 			buildConfigurations = (
 				85C2DB6704ECE25220B58F84 /* Debug */,
 				84F9C54C345D858C62DA668D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8BFAF5BDBC63CE1F1466116D /* Build configuration list for PBXNativeTarget "OstinatoWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88CC6C1C9132D66AE3265F8D /* Debug */,
+				2D22EF25715478B17AE05847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

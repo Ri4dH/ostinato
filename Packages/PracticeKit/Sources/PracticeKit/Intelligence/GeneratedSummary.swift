@@ -23,7 +23,7 @@ public enum WeeklySummaryGenerator {
     }
 
     public static func summary(for input: WeeklySummaryInput) async -> WeeklySummary {
-        guard isModelAvailable, input.totalMinutes > 0 else { return RulesBasedSummary.make(input) }
+        guard input.totalMinutes > 0, isModelAvailable else { return RulesBasedSummary.make(input) }
         let session = LanguageModelSession(instructions: """
             You summarize a musician's practice week from aggregated numbers. \
             Be encouraging but plain. Never invent facts beyond the data. \

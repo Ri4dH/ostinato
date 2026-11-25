@@ -79,3 +79,46 @@ struct SeededGenerator: RandomNumberGenerator {
         return z ^ (z >> 31)
     }
 }
+
+/// Launch arguments for App Store screenshots. Only honoured with `-demoData`.
+enum DemoScreen {
+    static var isEnabled: Bool { ProcessInfo.processInfo.arguments.contains("-demoData") }
+
+    static func value(_ flag: String) -> String? {
+        let args = ProcessInfo.processInfo.arguments
+        guard isEnabled, let index = args.firstIndex(of: flag), index + 1 < args.count else { return nil }
+        return args[index + 1]
+    }
+
+    static func has(_ flag: String) -> Bool { isEnabled && ProcessInfo.processInfo.arguments.contains(flag) }
+
+    static var tab: AppTab {
+        switch value("-tab") {
+        case "repertoire": .repertoire
+        case "history": .history
+        case "stats": .stats
+        case "settings": .settings
+        default: .practice
+        }
+    }
+
+    /// A session that has been running for a while, across three items.
+    @MainActor
+    static func startSession(in model: AppModel) {
+        let context = model.context
+        let items = (try? context.fetch(FetchDescriptor<PracticeItem>(sortBy: [SortDescriptor(\.sortIndex)]))) ?? []
+        let violin = items.first?.instrument
+        guard items.count >= 3 else { return }
+        let begin = Date().addingTimeInterval(-(23 * 60 + 41))
+        nonisolated(unsafe) var clock = begin
+        let engine = SessionEngine(now: { clock })
+        var session = engine.start(instrument: violin.map(InstrumentRef.init),
+                                   target: .item(items[0].id, title: items[0].title), source: .phone)
+        clock = begin.addingTimeInterval(9 * 60 + 12)
+        engine.switchTo(.item(items[2].id, title: items[2].title), in: &session)
+        clock = begin.addingTimeInterval(16 * 60 + 5)
+        engine.switchTo(.item(items[1].id, title: items[1].title), in: &session)
+        model.sessionController.applyRemote(session)
+        model.isShowingActiveSession = true
+    }
+}

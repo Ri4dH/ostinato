@@ -17,3 +17,6 @@ Packages/PracticeKit/.swiftpm/
 # Local tool settings
 .claude/settings.local.json
 .mobilebuildmcp/
+
+# Local build output
+build/

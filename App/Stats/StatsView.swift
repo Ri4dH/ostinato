@@ -117,9 +117,16 @@ struct StatsView: View {
         let notes = ((try? context.fetch(FetchDescriptor<PracticeSession>(
             predicate: #Predicate { $0.startDate >= start && $0.startDate < end }))) ?? [])
             .map(\.notes).filter { !$0.isEmpty }
-        let input = WeeklySummaryInput.make(records: records, itemTitles: titles, notes: notes,
+        let input = WeeklySummaryInput.make(records: model.statsStore.records, itemTitles: titles, notes: notes,
                                             goal: settings.goal, now: Date(), calendar: .current)
-        summary = await WeeklySummaryGenerator.summary(for: input)
+        // Show the instant rules-based summary, then upgrade if the on-device
+        // model produces one (that can take several seconds).
+        summary = RulesBasedSummary.make(input)
+        guard WeeklySummaryGenerator.isModelAvailable, input.totalMinutes > 0 else { return }
+        let generated = await WeeklySummaryGenerator.summary(for: input)
+        // A newer load may have started while this one awaited.
+        guard !Task.isCancelled, generated.isGenerated else { return }
+        summary = generated
     }
 
     private func recompute() {

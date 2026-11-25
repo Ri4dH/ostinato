@@ -56,7 +56,7 @@ struct WatchHomeView: View {
                     Label("Start", systemImage: "play.fill").font(.headline).frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(Color(hex: model.lastInstrument?.colorHex ?? InstrumentPalette.defaultHex))
+                .tint(Color(watchHex: model.lastInstrument?.colorHex ?? InstrumentPalette.defaultHex))
 
                 if model.instruments.count > 1 {
                     NavigationLink {
@@ -66,7 +66,7 @@ struct WatchHomeView: View {
                                 model.start(instrument: instrument)
                             } label: {
                                 Label(instrument.name, systemImage: instrument.symbolName)
-                                    .foregroundStyle(Color(hex: instrument.colorHex))
+                                    .foregroundStyle(Color(watchHex: instrument.colorHex))
                             }
                         }
                         .navigationTitle("Instrument")
@@ -97,7 +97,7 @@ struct WatchActiveView: View {
 
     var body: some View {
         if let session = model.controller.active {
-            let tint = Color(hex: session.instrument?.colorHex ?? InstrumentPalette.defaultHex)
+            let tint = Color(watchHex: session.instrument?.colorHex ?? InstrumentPalette.defaultHex)
             ScrollView {
                 VStack(spacing: 8) {
                     Text(timerInterval: session.timerReferenceDate(at: .now)...Date.distantFuture,
@@ -112,7 +112,9 @@ struct WatchActiveView: View {
                     NavigationLink {
                         WatchItemPicker(session: session) { switchTrigger += 1 }
                     } label: {
-                        Label("Next Item", systemImage: "forward.fill").frame(maxWidth: .infinity)
+                        Label("Next Item", systemImage: "forward.fill")
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity)
                     }
                     .tint(tint)
 
@@ -227,5 +229,12 @@ struct WatchSettingsView: View {
             ForEach([5, 10, 15, 20, 30], id: \.self) { Text("\($0) min").tag($0) }
         }
         .navigationTitle("Interval taps")
+    }
+}
+
+extension Color {
+    /// The watch is always dark: use the palette's dark-mode step.
+    init(watchHex hex: String) {
+        self.init(hex: InstrumentPalette.hex(hex, dark: true))
     }
 }

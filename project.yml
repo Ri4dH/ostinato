@@ -172,6 +172,19 @@ targets:
         TEST_TARGET_NAME: Ostinato
         GENERATE_INFOPLIST_FILE: YES
 
+  OstinatoWatchUITests:
+    type: bundle.ui-testing
+    platform: watchOS
+    sources:
+      - path: WatchUITests
+    dependencies:
+      - target: OstinatoWatch
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(OSTINATO_BUNDLE_ID).watchkitapp.uitests
+        TEST_TARGET_NAME: OstinatoWatch
+        GENERATE_INFOPLIST_FILE: YES
+
 schemes:
   Ostinato:
     build:
@@ -188,3 +201,6 @@ schemes:
     build:
       targets:
         OstinatoWatch: all
+    test:
+      targets:
+        - OstinatoWatchUITests

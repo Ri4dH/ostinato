@@ -57,6 +57,9 @@ struct PracticeHomeView: View {
                 NavigationStack { tool.destination }
             }
             .sensoryFeedback(.start, trigger: startTrigger)
+            .task {
+                if let demo = DemoScreen.value("-demoTool") { tool = PracticeTool(rawValue: demo) }
+            }
         }
     }
 
@@ -241,7 +244,8 @@ struct ContinueWithSection: View {
     @State private var items: [PracticeItem] = []
 
     var body: some View {
-        Group {
+        // A VStack (not Group) so `.task` runs even while the list is empty.
+        VStack(alignment: .leading, spacing: 0) {
             if !items.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Continue with").font(.headline)
@@ -256,6 +260,7 @@ struct ContinueWithSection: View {
                                     .frame(minHeight: 36)
                             }
                             .buttonStyle(.glass)
+                            .tint(.primary)
                             .accessibilityHint("Starts a session on this item")
                         }
                     }
