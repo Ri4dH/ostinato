@@ -106,6 +106,9 @@ targets:
     platform: watchOS
     sources:
       - path: WatchApp
+      # One Icon Composer file for both apps; it includes the round watchOS variant.
+      - path: App/Resources/AppIcon.icon
+        buildPhase: resources
     dependencies:
       - package: PracticeKit
       - target: OstinatoWatchWidgets

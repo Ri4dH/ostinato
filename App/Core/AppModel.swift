@@ -55,6 +55,12 @@ final class AppModel {
             cacheURL: isUITesting ? nil : identifiers.sharedDirectory.appending(path: "stats-records.json"),
             loadInBackground: true)
 
+        #if DEBUG
+        if CloudKitSchemaSetup.isRequested, let containerID = identifiers.cloudKitContainer {
+            CloudKitSchemaSetup.run(containerID: containerID)
+        }
+        #endif
+
         let wantsSync = settings.syncEnabled && settings.iCloudSignedIn
         container = Self.buildContainer(sync: wantsSync, identifiers: identifiers)
         isSyncing = wantsSync
